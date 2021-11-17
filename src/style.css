@@ -5,35 +5,35 @@ html {
   box-sizing: border-box;
 }
 
-/* stylelint-disable */
 *,
 *::before,
 *::after {
   box-sizing: inherit;
 }
-/* stylelint-enable */
 
 body {
   font-family: var(--font);
+  background-color: var(--colorLightest);
 }
 
-li {
-  line-height: 1.8;
+.color--accent {
+ color: var(--colorMain);
 }
 
-.container {
-  width: 60rem;
-  margin: var(--spacerBig) auto;
+/* Header */
+
+.header {
+  margin: var(--spacerBig);
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
 }
 
-.pagetitle {
+.title {
   font-size: var(--fontBig);
+  font-weight: var(--fontWeightBold);
 }
 
-.demo-list {
-  margin-top: var(--spacerBig);
-  text-transform: capitalize;
+.navigation__icon {
+  width: 2rem;
 }
