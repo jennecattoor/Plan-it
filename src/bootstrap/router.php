@@ -2,7 +2,7 @@
 // set routes
 $routes = array(
   'home' => array(
-    'controller' => 'Pages',
+    'controller' => 'Users',
     'action' => 'index'
   )
 );

@@ -1,8 +1,8 @@
 <section class="content">
 <ul class="demo-list">
 <?php
-    foreach ($demos as $demo){
-      echo('<li>' . $demo->name . '</li>');
+    foreach ($users as $user){
+      echo('<li>' . $user->id . '</li>');
     }
   ?>
   </ul>
