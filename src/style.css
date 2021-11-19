@@ -17,7 +17,7 @@ body {
 }
 
 .color--accent {
- color: var(--colorMain);
+  color: var(--colorMain);
 }
 
 /* Header */
