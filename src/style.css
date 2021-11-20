@@ -27,6 +27,8 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 1rem;
+  margin-bottom: 3rem;
 }
 
 .title {
@@ -36,4 +38,57 @@ body {
 
 .navigation__icon {
   width: 2rem;
+}
+
+.content {
+  margin: auto;
+  max-width: 75%;
+}
+
+h2 {
+  font-size: var(--fontBig);
+  margin-top: var(--spacerRegular);
+
+  text-align: center;
+  line-height: var(--spacerBig);
+}
+
+.subheading {
+  display: none;
+}
+
+hr {
+  margin-top: var(--spacerBig);
+  margin-bottom: var(--spacerRegular);
+}
+
+.signup {
+  margin-bottom: var(--spacerBig);
+}
+
+.section__title {
+  font-size: var(--fontRegular);
+  text-align: center;
+  margin-top: var(--spacerBig);
+  margin-bottom: var(--spacerSmall);
+  font-weight: var(--fontWeightBold);
+}
+
+.signup .input {
+  width: 100%;
+  padding: var(--spacerSmall);
+  margin-top: var(--spacerSmall);
+}
+
+.button.button--small {
+  margin-top: var(--spacerSmall);
+  width: 100%;
+  padding: var(--spacerSmall);
+  background-color: var(--colorSecondary);
+  color: var(--colorLightest);
+  letter-spacing: 1px;
+}
+
+.hyperlink {
+  color: var(--colorMain);
 }
