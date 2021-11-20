@@ -4,6 +4,10 @@ $routes = array(
   'home' => array(
     'controller' => 'Users',
     'action' => 'index'
+  ),
+    'overview' => array(
+    'controller' => 'Users',
+    'action' => 'overview'
   )
 );
 
