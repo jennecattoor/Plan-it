@@ -32,4 +32,15 @@
 
   <p>Already have an account? <a href="#" class="hyperlink">Log in<a></p>
 
+  <div class="tutorial-info">
+    <img src="./assets/img/group.svg" alt="group-icon">
+    <h2>Create a group and invite your friends and family.</h2>
+
+    <img src="./assets/img/calendar.svg" alt="calender-icon">
+    <h2>Create a event for your groups.</h2>
+
+    <img src="./assets/img/organize.svg" alt="organize-icon">
+    <h2>Organize the dates and to-bring lists for your events.</h2>
+  </div>
+
 </section>
