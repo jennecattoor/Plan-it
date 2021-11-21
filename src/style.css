@@ -80,7 +80,7 @@ hr {
   margin-top: var(--spacerSmall);
 }
 
-.button.button--small {
+.button {
   margin-top: var(--spacerSmall);
   width: 100%;
   padding: var(--spacerSmall);

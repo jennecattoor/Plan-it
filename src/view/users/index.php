@@ -5,8 +5,8 @@
   <hr>
 
   <div class="signup">
-      <h3 class="section__title" data-aos="fade-up">Sign up</h3>
-      <form method="post" action="index.php?page=competition" data-aos="fade-up">
+      <h3 class="section__title">Sign up</h3>
+      <form method="post" action="index.php?page=index">
       <input type="hidden" name="action" value="signUp">
           <label class="label__login"><!-- Your name: -->
               <input type="text" name="name" class="form__input input" placeholder="Your name" required value="<?php
@@ -14,7 +14,7 @@
               ?>">
               <span class="error"><?php if (!empty($errors['name'])) echo $errors['name']; ?></span>
           </label>
-          <label class="label__login label__login--first"><!-- Your email: -->
+          <label class="label__login"><!-- Your email: -->
               <input type="email" name="email" class="form__input input" placeholder="Email" required value="<?php
                   if (!empty($_POST['email'])) echo $_POST['email'];
               ?>">
@@ -26,7 +26,7 @@
               ?>">
               <span class="error"><?php if (!empty($errors['password'])) echo $errors['password']; ?></span>
           </label>
-          <input type="submit" value="Create your account" class="button button--small">
+          <input type="submit" value="Create your account" class="button">
       </form>
   </div>
 

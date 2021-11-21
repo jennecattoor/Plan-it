@@ -7,11 +7,27 @@ require_once __DIR__ . '/../model/User.php';
 class UsersController extends Controller {
 
   public function index() {
-    // this should refer to a database query, a hard-coded object is used for demo purposes
-    $users = User::all();
 
-    //$demos = array(new Demo('first item'), new Demo('second item'), new Demo('last item'));
-    $this->set('users',$users);
+    if (!empty($_POST['action'])) {
+      if ($_POST['action'] == 'signUp') {
+        $signup = new User();
+        $signup->name = $_POST['name'];
+        $signup->email = $_POST['email'];
+        $signup->password = $_POST['password'];
+        $errors = User::validate($signup);
+        if (empty($errors)) {
+          $signup->save();
+          header('Location: index.php?' . http_build_query($_GET));
+          exit();
+        } else {
+          $this->set('errors', $errors);
+        }
+      }
+    }
+
+  }
+
+  public function overview() {
 
   }
 }
