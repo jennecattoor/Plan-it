@@ -48,7 +48,6 @@ body {
 h2 {
   font-size: var(--fontBig);
   margin-top: var(--spacerRegular);
-
   text-align: center;
   line-height: var(--spacerBig);
 }
@@ -80,6 +79,12 @@ hr {
   margin-top: var(--spacerSmall);
 }
 
+.login-option {
+  text-align: center;
+  font-size: var(--fontSmall);
+
+}
+
 .button {
   margin-top: var(--spacerSmall);
   width: 100%;
@@ -92,3 +97,21 @@ hr {
 .hyperlink {
   color: var(--colorMain);
 }
+
+.tutorial-info img{
+  max-width: 5rem;
+  margin-bottom: var(--spacerRegular);
+  margin-top: 2.5rem;
+}
+
+.tutorial-info {
+  text-align: center;
+  margin-top: var(--spacerRegular);
+  margin-bottom: 5rem;
+  line-height: 1.3rem;
+}
+
+/* .tutorial-info h3 {
+  margin-bottom: var(--spacerSmall);
+}
+ */
