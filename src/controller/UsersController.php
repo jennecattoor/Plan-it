@@ -28,6 +28,36 @@ class UsersController extends Controller {
     $this->set('title', 'Home');
   }
 
+  public function login() {
+
+    if (!empty($_POST['action'])) {
+      if ($_POST['action'] == 'logIn') {
+        $errors = [];
+        if (empty($_POST['emailLogin'])) {
+          $errors['emailLogin'] = 'Please fill in your email';
+        }
+
+        if (empty($_POST['passwordLogin'])) {
+          $errors['passwordLogin'] = 'Please fill in your password';
+        }
+        $this->set('errors', $errors);
+
+        if (empty($errors)) {
+          $user = User::where('email', $_POST['emailLogin']);
+          if ($user->exists() && $user->first()->password == $_POST['passwordLogin']){
+            $_SESSION['valid'] = true;
+            $_SESSION['name'] = $user->first()->name;
+            $_SESSION['id'] = $user->first()->id;
+            header('Location: index.php?page=overview');
+            exit();
+          }
+        }
+      }
+    }
+
+    $this->set('title', 'Login');
+  }
+
   public function overview() {
 
 

@@ -91,13 +91,12 @@ hr {
 .signup .input {
   width: 100%;
   padding: var(--spacerSmall);
-  margin-top: var(--spacerSmall);
+  margin-bottom: var(--spacerRegular);
 }
 
 .login-option {
   text-align: center;
   font-size: var(--fontSmall);
-
 }
 
 .button {

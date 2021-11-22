@@ -5,6 +5,10 @@ $routes = array(
     'controller' => 'Users',
     'action' => 'index'
   ),
+  'login' => array(
+    'controller' => 'Users',
+    'action' => 'login'
+  ),
   'overview' => array(
     'controller' => 'Users',
     'action' => 'overview'
