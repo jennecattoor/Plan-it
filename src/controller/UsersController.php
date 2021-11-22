@@ -25,9 +25,12 @@ class UsersController extends Controller {
       }
     }
 
+    $this->set('title', 'Home');
   }
 
   public function overview() {
 
+
+    $this->set('title', 'Overview');
   }
 }

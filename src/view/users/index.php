@@ -6,22 +6,22 @@
 
   <div class="signup">
       <h3 class="section__title">Sign up</h3>
-      <form method="post" action="index.php?page=index">
+      <form method="post">
       <input type="hidden" name="action" value="signUp">
           <label class="label__login"><!-- Your name: -->
-              <input type="text" name="name" class="form__input input" placeholder="Your name" required value="<?php
+              <input type="text" name="name" class="input" placeholder="Your name" required value="<?php
                   if (!empty($_POST['name'])) echo $_POST['name'];
               ?>">
               <span class="error"><?php if (!empty($errors['name'])) echo $errors['name']; ?></span>
           </label>
           <label class="label__login"><!-- Your email: -->
-              <input type="email" name="email" class="form__input input" placeholder="Email" required value="<?php
+              <input type="email" name="email" class="input" placeholder="Email" required value="<?php
                   if (!empty($_POST['email'])) echo $_POST['email'];
               ?>">
               <span class="error"><?php if (!empty($errors['email'])) echo $errors['email']; ?></span>
           </label>
           <label class="label__login"><!-- Your password: -->
-              <input type="password" name="password" class="form__input input" placeholder="Your password" required minlength="5" value="<?php
+              <input type="password" name="password" class="input" placeholder="Your password" required minlength="5" value="<?php
                   if (!empty($_POST['password'])) echo $_POST['password'];
               ?>">
               <span class="error"><?php if (!empty($errors['password'])) echo $errors['password']; ?></span>

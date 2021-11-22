@@ -8,13 +8,19 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <?php echo $css; ?>
-  <title>Plan-it</title>
+  <title>Eveplan - <?php echo $title; ?></title>
 </head>
 <body>
   <main>
     <header class="header">
       <h1 class="title"><span class="color--accent">Eve</span>plan</h1>
-      <img class="navigation__icon" src="./assets/img/hamburger-menu.svg" alt="menu icon">
+      <span class="navigation__icon">&#9776;</span>
+      <!--<nav class="header__nav">
+        <ul>
+          <li><a href="index.php?page=index">Home<a></li>
+          <li><a href="index.php?page=overview">Overview<a></li>
+        </ul>
+      </nav>-->
     </header>
     <?php echo $content;?>
 </main>

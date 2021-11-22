@@ -5,7 +5,7 @@ $routes = array(
     'controller' => 'Users',
     'action' => 'index'
   ),
-    'overview' => array(
+  'overview' => array(
     'controller' => 'Users',
     'action' => 'overview'
   )

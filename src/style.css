@@ -37,8 +37,23 @@ body {
 }
 
 .navigation__icon {
-  width: 2rem;
+  font-size: 30px;
+  cursor: pointer;
 }
+
+.header__nav {
+  background-color: rgba(0, 0, 0, .9);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: .5s;
+  transition-delay: .5s;
+  overflow: hidden;
+}
+
+/* Content */
 
 .content {
   margin: auto;
@@ -92,13 +107,14 @@ hr {
   background-color: var(--colorSecondary);
   color: var(--colorLightest);
   letter-spacing: 1px;
+  border: none;
 }
 
 .hyperlink {
   color: var(--colorMain);
 }
 
-.tutorial-info img{
+.tutorial-info img {
   max-width: 5rem;
   margin-bottom: var(--spacerRegular);
   margin-top: 2.5rem;
