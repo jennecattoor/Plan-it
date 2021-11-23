@@ -1,0 +1,17 @@
+:root {
+  --colorLightest: white;
+  --colorText: #211f1f;
+  --colorMain: #fca311;
+  --colorSecondary: #14213d;
+  --colorGray: #e5e5e5;
+  --spacerSmall: .75rem; /* 12px */
+  --spacerRegular: 1rem; /* 16px */
+  --spacerBig: 1.88rem; /* 30px */
+  --fontSmall: .75rem; /* 12px */
+  --fontRegular: 1.13rem; /* 18px */
+  --fontMedium: 1.25rem; /* 20px */
+  --fontBig: 1.75rem; /* 28px */
+  --font: 'Poppins', sans-serif;
+  --fontWeightRegular: 400;
+  --fontWeightBold: 600;
+}
