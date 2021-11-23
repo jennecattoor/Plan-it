@@ -14,13 +14,24 @@
   <main>
     <header class="header">
       <h1 class="title"><span class="color--accent">Eve</span>plan</h1>
-      <span class="navigation__icon">&#9776;</span>
-      <!--<nav class="header__nav">
-        <ul>
-          <li><a href="index.php?page=index">Home<a></li>
-          <li><a href="index.php?page=overview">Overview<a></li>
-        </ul>
-      </nav>-->
+      <nav class="navbar">
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.php?page=index" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.php?page=login" class="nav-link">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.php?page=overview" class="nav-link">Overview</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+    </nav>
     </header>
     <?php echo $content;?>
 </main>
