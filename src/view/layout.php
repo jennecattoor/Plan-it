@@ -34,7 +34,21 @@
     </nav>
     </header>
     <?php echo $content;?>
+
 </main>
+<footer>
+      <ul class="footer-menu">
+                <li class="footer-item">
+                    <a href="index.php?page=index" class="footer-link">Home</a>
+                </li>
+                <li class="footer-item">
+                    <a href="index.php?page=login" class="footer-link">Login</a>
+                </li>
+                <li class="footer-item">
+                    <a href="index.php?page=overview" class="footer-link">Overview</a>
+                </li>
+            </ul>
+    </footer>
   <?php echo $js; ?>
 </body>
 </html>

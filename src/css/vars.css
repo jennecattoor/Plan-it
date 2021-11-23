@@ -4,8 +4,10 @@
   --colorMain: #fca311;
   --colorSecondary: #14213d;
   --colorGray: #e5e5e5;
+  --spacerXsmall: .3rem /* 8px */;
   --spacerSmall: .75rem; /* 12px */
   --spacerRegular: 1rem; /* 16px */
+  --spacerMedium: 1.5rem; /* 24px */
   --spacerBig: 1.88rem; /* 30px */
   --fontSmall: .75rem; /* 12px */
   --fontRegular: 1.13rem; /* 18px */
