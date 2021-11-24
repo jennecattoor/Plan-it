@@ -2,6 +2,7 @@
 
 require_once __DIR__ . '/Controller.php';
 require_once __DIR__ . '/../model/User.php';
+require_once __DIR__ . '/../model/Group.php';
 
 
 class UsersController extends Controller {
@@ -64,9 +65,30 @@ class UsersController extends Controller {
     $this->set('title', 'Overview');
   }
 
-    public function group() {
+  public function createGroup() {
 
+    if (!empty($_POST['action'])) {
+      if ($_POST['action'] == 'createGroup') {
+        $createGroup = new Group();
+        $createGroup->name = $_POST['groupName'];
+        $createGroup->description = $_POST['groupDesc'];
+        $errors = Group::validate($createGroup);
+        if (empty($errors)) {
+          $createGroup->save();
+          header('Location: index.php?' . http_build_query($_GET));
+          exit();
+        } else {
+          $this->set('errors', $errors);
+        }
+      }
+    }
 
     $this->set('title', 'Create Group');
+  }
+
+  public function group() {
+
+
+    $this->set('title', 'Group Details');
   }
 }
