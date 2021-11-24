@@ -63,4 +63,10 @@ class UsersController extends Controller {
 
     $this->set('title', 'Overview');
   }
+
+    public function group() {
+
+
+    $this->set('title', 'Create Group');
+  }
 }

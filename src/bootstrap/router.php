@@ -12,6 +12,10 @@ $routes = array(
   'overview' => array(
     'controller' => 'Users',
     'action' => 'overview'
+  ),
+  'group' => array(
+    'controller' => 'Users',
+    'action' => 'group'
   )
 );
 

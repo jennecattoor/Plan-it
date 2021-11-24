@@ -25,6 +25,9 @@
                 <li class="nav-item">
                     <a href="index.php?page=overview" class="nav-link">Overview</a>
                 </li>
+                <li class="nav-item">
+                    <a href="index.php?page=group" class="nav-link">Create Group</a>
+                </li>
             </ul>
             <div class="hamburger">
                 <span class="bar"></span>
