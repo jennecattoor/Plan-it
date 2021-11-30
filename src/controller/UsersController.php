@@ -60,8 +60,9 @@ class UsersController extends Controller {
   }
 
   public function overview() {
+    $user = User::find($_SESSION['id']);
 
-
+    $this->set('user', $user);
     $this->set('title', 'Overview');
   }
 

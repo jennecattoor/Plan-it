@@ -17,4 +17,8 @@ class Group extends Model {
     }
     return $errors;
   }
+
+  public function users(){
+    return $this->belongsToMany(User::class);
+  }
 }
