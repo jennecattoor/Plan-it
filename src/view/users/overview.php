@@ -3,7 +3,7 @@
 
 <hr>
 <div class="group-list">
-  <span class="group-heading">My Groups</span>
+  <h3 class="group-heading">My Groups</h3>
 
 <?php foreach($user->groups as $group): ?>
   <a href="#">
