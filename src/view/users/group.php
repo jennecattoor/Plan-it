@@ -5,10 +5,8 @@
 
   <div class="all-group-content">
     <div class="group-info">
-      <h3>Group name</h3>
-      <p class="group-desc">Group description.
-        Here there will be a small description
-        about the group and what it is for.
+      <h3><?php echo $group['name']; ?></h3>
+      <p class="group-desc"><?php echo $group['description']; ?>
       </p>
       <a href="#">
         <button class="button">Invite People</button>

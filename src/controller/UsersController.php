@@ -88,8 +88,15 @@ class UsersController extends Controller {
   }
 
   public function group() {
+    if(!empty($_GET['id'])) {
+      $group = Group::find($_GET['id']);
+    }
+    if(empty($group)){
+      header('Location:index.php');
+      exit();
+    }
 
-
+    $this->set('group', $group);
     $this->set('title', 'Group Details');
   }
 }

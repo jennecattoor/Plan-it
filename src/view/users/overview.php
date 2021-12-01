@@ -6,7 +6,7 @@
   <h3 class="group-heading">My Groups</h3>
 
 <?php foreach($user->groups as $group): ?>
-  <a href="#">
+  <a href="index.php?page=group&id=<?php echo $group['id']; ?>">
     <div class="group-entry">
       <figure></figure>
       <div>
