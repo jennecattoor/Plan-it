@@ -10,7 +10,7 @@
     <div class="group-entry">
       <figure></figure>
       <div>
-        <span>Group name: <?php echo $group['name']; ?></span><br>
+        <span class="overview-group-name"><?php echo $group['name']; ?></span><br>
         <span>Upcoming event: <?php echo $group['description']; ?></span>
       </div>
     </div>

@@ -8,6 +8,7 @@ hamburger.addEventListener('click', mobileMenu);
 function mobileMenu() {
   hamburger.classList.toggle('active');
   navMenu.classList.toggle('active');
+  console.log('clicked');
 }
 
 const navLink = document.querySelectorAll('.nav-link');

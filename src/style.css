@@ -92,6 +92,7 @@ main {
 footer {
   background-color: var(--colorSecondary);
   padding: var(--spacerBig);
+  text-align: center;
 }
 
 .footer-link {
@@ -103,6 +104,19 @@ footer li {
   margin: auto;
   margin-top: var(--spacerBig);
   margin-bottom: var(--spacerBig);
+}
+
+hr {
+  margin-top: var(--spacerBig);
+  margin-bottom: var(--spacerRegular);
+}
+
+p {
+  line-height: var(--spacerMedium);
+}
+
+footer hr {
+  max-width: 100%;
 }
 
 /* Content */
@@ -129,12 +143,8 @@ h3 {
   display: none;
 }
 
-hr {
-  margin-top: var(--spacerBig);
-  margin-bottom: var(--spacerRegular);
-}
-
 .signup, .login {
+  margin: auto;
   margin-bottom: var(--spacerBig);
 }
 
@@ -174,6 +184,7 @@ hr {
 
 .button {
   width: 100%;
+  max-width: 20rem;
   padding: var(--spacerSmall);
   background-color: var(--colorSecondary);
   color: var(--colorLightest);
@@ -194,10 +205,12 @@ a {
 
 .tutorial-info {
   text-align: center;
+  margin: auto;
   margin-top: var(--spacerRegular);
   margin-bottom: 5rem;
   line-height: 1.3rem;
   color: var(--colorText);
+  max-width: 20rem;
 }
 
 /* Overview page styling */
@@ -226,10 +239,15 @@ a {
 }
 
 figure {
-  width: 3rem;
-  height: 3rem;
+  min-width: 3rem;
+  min-height: 3rem;
   background-color: tomato;
   border-radius: 50%;
+}
+
+.overview-group-name {
+  font-size: var(--fontMedium);
+  font-weight: var(--fontWeightBold);
 }
 
 /* Group detail view */
@@ -237,6 +255,7 @@ figure {
 .group-desc {
   margin-top: var(--spacerSmall);
   margin-bottom: var(--spacerRegular);
+  max-width: 50ch;
 }
 
 .upcoming-events {
@@ -248,9 +267,21 @@ figure {
   line-height: var(--spacerBig);
 }
 
+/* Create groups content */
+
+.create-group {
+  height: 35rem;
+}
+
+.create-group p {
+  line-height: var(--spacerMedium);
+
+  text-align: center;
+}
+
 /* Mobile screen breakpoint */
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 845px) {
 
   .nav-menu {
     position: fixed;
@@ -288,4 +319,51 @@ figure {
     transform: translateY(-8px) rotate(-45deg);
   }
 
+}
+
+@media only screen and (min-width: 768px) {
+
+  .content {
+    margin-top: 6rem;
+  }
+
+  hr {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
+
+  .signup, .login {
+    max-width: 20em;
+  }
+
+  .signup-option, .group-list {
+    margin-bottom: 15rem;
+  }
+
+  .group-info {
+    max-width: 40%;
+  }
+
+  .group-desc {
+    line-height: var(--spacerMedium);
+  }
+
+  .upcoming-events {
+    width: 40%;
+  }
+
+  .all-group-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 10rem;
+  }
+
+  .all-group-content hr {
+    display: none;
+  }
+
+  .create-group-form {
+    max-width: 30rem;
+  }
 }

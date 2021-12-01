@@ -1,5 +1,6 @@
 <section class="content">
-
+<h2>Log in to Eveplan</h2>
+<hr>
 <div class="login">
     <h3 class="section__title">Log in</h3>
     <form method="post">
