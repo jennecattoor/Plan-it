@@ -18,9 +18,9 @@
     <div class="upcoming-events">
       <h3>Upcoming events</h3>
       <ul>
-        <li><a href="#">Event #1</a> - 24/11/2021</li>
-        <li><a href="#">Event #2</a> - 11/12/2021</li>
-        <li><a href="#">Event #3</a> - 23/12/2021</li>
+      <?php foreach($events as $event): ?>
+        <li><a href="#"><?php echo $event['name']; ?> #1</a> - <?php echo $event['date']; ?></li>
+      <?php endforeach; ?>
       </ul>
     </div>
   </div>

@@ -3,6 +3,7 @@
 require_once __DIR__ . '/Controller.php';
 require_once __DIR__ . '/../model/User.php';
 require_once __DIR__ . '/../model/Group.php';
+require_once __DIR__ . '/../model/Event.php';
 
 
 class UsersController extends Controller {
@@ -96,7 +97,33 @@ class UsersController extends Controller {
       exit();
     }
 
+    $events = Event::all();
+
     $this->set('group', $group);
+    $this->set('events', $events);
     $this->set('title', 'Group Details');
+  }
+
+    public function createEvent() {
+
+    if (!empty($_POST['action'])) {
+      if ($_POST['action'] == 'createEvent') {
+        $createEvent = new Event();
+        $createEvent->name = $_POST['eventName'];
+        $createEvent->description = $_POST['eventDesc'];
+        $createEvent->location = $_POST['eventLocation'];
+        $createEvent->date = $_POST['eventDate'];
+        $errors = Event::validate($createEvent);
+        if (empty($errors)) {
+          $createEvent->save();
+          header('Location: index.php?' . http_build_query($_GET));
+          exit();
+        } else {
+          $this->set('errors', $errors);
+        }
+      }
+    }
+
+    $this->set('title', 'Create Event');
   }
 }

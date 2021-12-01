@@ -20,6 +20,10 @@ $routes = array(
   'group' => array(
     'controller' => 'Users',
     'action' => 'group'
+  ),
+  'createEvent' => array(
+    'controller' => 'Users',
+    'action' => 'createEvent'
   )
 );
 
