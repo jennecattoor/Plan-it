@@ -21,6 +21,6 @@
     </form>
 </div>
 
-<p class="signup-option">Don't have an account yet? <br><a href="index.php?page=login" class="hyperlink">Sign up</a></p>
+<p class="signup-option">Don't have an account yet? <br><a href="index.php?page=index" class="hyperlink">Sign up</a></p>
 
 </section>

@@ -97,14 +97,11 @@ class UsersController extends Controller {
       exit();
     }
 
-    $events = Event::all();
-
     $this->set('group', $group);
-    $this->set('events', $events);
     $this->set('title', 'Group Details');
   }
 
-    public function createEvent() {
+  public function createEvent() {
 
     if (!empty($_POST['action'])) {
       if ($_POST['action'] == 'createEvent') {
@@ -125,5 +122,22 @@ class UsersController extends Controller {
     }
 
     $this->set('title', 'Create Event');
+  }
+
+  public function event() {
+    if(!empty($_GET['id'])) {
+      $event = Event::find($_GET['id']);
+    }
+    if(empty($event)){
+      header('Location:index.php');
+      exit();
+    }
+    $this->set('event', $event);
+    $this->set('title', 'Event');
+  }
+
+  public function invited() {
+
+    $this->set('title', 'Invite');
   }
 }
