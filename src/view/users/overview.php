@@ -16,7 +16,21 @@
     </div>
   </a>
 <?php endforeach; ?>
+</div>
 
+  <p>Have you been invited to join a group? Enter the code here</p>
+  <div class="login">
+    <h3 class="section__title">Log in</h3>
+    <form method="post">
+    <input type="hidden" name="action" value="joinGroup">
+      <label class="label">Enter the group code:<br>
+        <input type="text" name="code" class="input" placeholder="GQP691" required value="<?php
+          if (!empty($_POST['code'])) echo $_POST['code'];
+        ?>">
+        <span class="error"><?php if (!empty($errors['code'])) echo $errors['code']; ?></span>
+      </label>
+      <input type="submit" value="Join group" class="button">
+    </form>
 </div>
 
 </section>

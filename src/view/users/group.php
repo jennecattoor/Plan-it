@@ -25,7 +25,7 @@
     </div>
   </div>
 
-
+  <a href="index.php?page=createEvent" class="hyperlink">Create event</a>
 
 
 </section>

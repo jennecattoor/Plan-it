@@ -28,10 +28,6 @@ $routes = array(
   'event' => array(
     'controller' => 'Users',
     'action' => 'event'
-  ),
-  'invited' => array(
-    'controller' => 'Users',
-    'action' => 'invited'
   )
 );
 

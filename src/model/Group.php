@@ -15,6 +15,9 @@ class Group extends Model {
     if(empty($data['description'])){
       $errors['groupDesc'] = 'Please fill in the group description';
     }
+    if(empty($data['code'])){
+      $errors['code'] = 'Please fill in the group description';
+    }
     return $errors;
   }
 

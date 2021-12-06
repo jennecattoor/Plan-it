@@ -135,9 +135,4 @@ class UsersController extends Controller {
     $this->set('event', $event);
     $this->set('title', 'Event');
   }
-
-  public function invited() {
-
-    $this->set('title', 'Invite');
-  }
 }
