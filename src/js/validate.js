@@ -63,14 +63,17 @@
 
   const init = () => {
     const $form = document.querySelector(`form`);
-    $form.noValidate = true;
-    $form.addEventListener(`submit`, handleSubmitForm);
 
-    const inputs = document.querySelectorAll(`.input`);
-    inputs.forEach($input => {
-      $input.addEventListener(`blur`, handleBlurInput);
-      $input.addEventListener(`input`, handleInputField);
-    });
+    if ($form) {
+      $form.noValidate = true;
+      $form.addEventListener(`submit`, handleSubmitForm);
+
+      const inputs = document.querySelectorAll(`.input`);
+      inputs.forEach($input => {
+        $input.addEventListener(`blur`, handleBlurInput);
+        $input.addEventListener(`input`, handleInputField);
+      });
+    }
   };
 
   init();

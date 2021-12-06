@@ -25,6 +25,9 @@
                 <li class="nav-item">
                     <a href="index.php?page=overview" class="nav-link">Overview</a>
                 </li>
+                <li class="nav-item">
+                    <a href="index.php?page=createGroup" class="nav-link">Create Group</a>
+                </li>
             </ul>
             <div class="hamburger">
                 <span class="bar"></span>
@@ -34,7 +37,31 @@
     </nav>
     </header>
     <?php echo $content;?>
+
 </main>
+<footer>
+      <ul class="footer-menu">
+                <li class="footer-item">
+                    <a href="index.php?page=index" class="footer-link">Home</a>
+                </li>
+                <hr>
+                <li class="footer-item">
+                    <a href="index.php?page=login" class="footer-link">Login</a>
+                </li>
+                <hr>
+                <li class="footer-item">
+                    <a href="index.php?page=overview" class="footer-link">Overview</a>
+                </li>
+                <hr>
+                <li class="footer-item">
+                    <a href="index.php?page=createGroup" class="footer-link">Create Group</a>
+                </li>
+                <hr>
+                <li class="footer-item">
+                    <a href="index.php?page=group" class="footer-link">Group Detail</a>
+                </li>
+            </ul>
+    </footer>
   <?php echo $js; ?>
 </body>
 </html>

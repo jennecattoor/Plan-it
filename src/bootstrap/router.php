@@ -12,6 +12,18 @@ $routes = array(
   'overview' => array(
     'controller' => 'Users',
     'action' => 'overview'
+  ),
+  'createGroup' => array(
+    'controller' => 'Users',
+    'action' => 'createGroup'
+  ),
+  'group' => array(
+    'controller' => 'Users',
+    'action' => 'group'
+  ),
+  'createEvent' => array(
+    'controller' => 'Users',
+    'action' => 'createEvent'
   )
 );
 

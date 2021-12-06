@@ -1,7 +1,3 @@
-export const init = () => {
-  console.log('start executing this JavaScript');
-};
-
 /* Navigation menu */
 
 const hamburger = document.querySelector('.hamburger');
@@ -12,6 +8,7 @@ hamburger.addEventListener('click', mobileMenu);
 function mobileMenu() {
   hamburger.classList.toggle('active');
   navMenu.classList.toggle('active');
+  console.log('clicked');
 }
 
 const navLink = document.querySelectorAll('.nav-link');
