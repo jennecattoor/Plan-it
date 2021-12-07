@@ -27,7 +27,7 @@
   </div>
 
   <div class="group-buttons">
-    <button class="button">Invite People</button>
+    <button class="button">Invite People: <?php echo $group['code']; ?></button>
     <a href="index.php?page=createEvent" class="hyperlink">
       <button class="button">Create new event</button>
     </a>

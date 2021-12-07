@@ -27,6 +27,7 @@ class UsersController extends Controller {
       }
     }
 
+    $_SESSION['valid'] = false;
     $this->set('title', 'Home');
   }
 
@@ -62,6 +63,18 @@ class UsersController extends Controller {
 
   public function overview() {
     $user = User::find($_SESSION['id']);
+
+      if(!empty($_POST['action'])){
+      if($_POST['action'] === 'joinGroup'){
+        $group = Group::where('code', $_POST['code']);
+          if ($group->exists()) {
+            $groupnew = $group->first()->id;
+            $user->groups()->attach($groupnew);
+            header('Location: index.php?page=overview');
+            exit();
+        }
+      }
+    }
 
     $this->set('user', $user);
     $this->set('title', 'Overview');
