@@ -3,7 +3,7 @@
   <div class="create-group">
       <h2>Create a group</h2>
       <hr>
-      <p>Creating a group gives you the opportunity to invite the friends you want.
+      <p class="subtext">Creating a group gives you the opportunity to invite the friends you want.
         <br> <br>
         Then create an awesome event and let the party begin!</p>
       <hr>

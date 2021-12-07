@@ -18,12 +18,12 @@
 <?php endforeach; ?>
 </div>
 
-  <p>Have you been invited to join a group? Enter the code here</p>
+  <p class="subtext">Have you been invited to join a group? <br> Enter the code here</p>
   <div class="login">
-    <h3 class="section__title">Log in</h3>
+    <h3 class="section__title">Join a group</h3>
     <form method="post">
     <input type="hidden" name="action" value="joinGroup">
-      <label class="label">Enter the group code:<br>
+      <label class="label">Group code:<br>
         <input type="text" name="code" class="input" placeholder="GQP691" required value="<?php
           if (!empty($_POST['code'])) echo $_POST['code'];
         ?>">

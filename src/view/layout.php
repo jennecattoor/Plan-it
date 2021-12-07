@@ -44,19 +44,19 @@
                 <li class="footer-item">
                     <a href="index.php?page=index" class="footer-link">Home</a>
                 </li>
-                <hr>
+                <hr class="hr-footer">
                 <li class="footer-item">
                     <a href="index.php?page=login" class="footer-link">Login</a>
                 </li>
-                <hr>
+                <hr class="hr-footer">
                 <li class="footer-item">
                     <a href="index.php?page=overview" class="footer-link">Overview</a>
                 </li>
-                <hr>
+                <hr class="hr-footer">
                 <li class="footer-item">
                     <a href="index.php?page=createGroup" class="footer-link">Create Group</a>
                 </li>
-                <hr>
+                <hr class="hr-footer">
                 <li class="footer-item">
                     <a href="index.php?page=group" class="footer-link">Group Detail</a>
                 </li>

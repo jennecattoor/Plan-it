@@ -107,16 +107,19 @@ footer li {
 }
 
 hr {
-  margin-top: var(--spacerBig);
-  margin-bottom: var(--spacerRegular);
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  height: 2px;
+  border: none;
+  background-color: var(--colorMain);
+}
+
+.hr-footer {
+  background-color: var(--colorGray);
 }
 
 p {
   line-height: var(--spacerMedium);
-}
-
-footer hr {
-  max-width: 100%;
 }
 
 /* Content */
@@ -146,6 +149,7 @@ h3 {
 .signup, .login {
   margin: auto;
   margin-bottom: var(--spacerBig);
+  max-width: var(--inputWidth);
 }
 
 .section__title {
@@ -184,7 +188,7 @@ h3 {
 
 .button {
   width: 100%;
-  max-width: 20rem;
+  max-width: var(--inputWidth);
   padding: var(--spacerSmall);
   background-color: var(--colorSecondary);
   color: var(--colorLightest);
@@ -210,13 +214,20 @@ a {
   margin-bottom: 5rem;
   line-height: 1.3rem;
   color: var(--colorText);
-  max-width: 20rem;
+  max-width: var(--inputWidth);
+}
+
+.subtext {
+  max-width: 45ch;
+  margin: auto;
+  text-align: center;
 }
 
 /* Overview page styling */
 
 .group-list {
   margin-top: var(--spacerMedium);
+  margin-bottom: 5rem;
 }
 
 .group-list a {
@@ -225,7 +236,7 @@ a {
 }
 
 .group-entry {
-  border: 1px solid var(--colorMain);
+  border: 2px solid var(--colorMain);
   border-radius: 5px;
   padding: var(--spacerRegular);
   display: flex;
@@ -255,7 +266,7 @@ figure {
 .group-desc {
   margin-top: var(--spacerSmall);
   margin-bottom: var(--spacerRegular);
-  max-width: 50ch;
+  max-width: 45ch;
 }
 
 .upcoming-events {
@@ -264,7 +275,20 @@ figure {
 
 .upcoming-events ul {
   margin-top: var(--spacerSmall);
+  margin-bottom: var(--spacerBig);
   line-height: var(--spacerBig);
+}
+
+.all-group-content {
+  margin: auto;
+  width: 100%;
+  max-width: 30rem;
+}
+
+.group-buttons {
+  min-width: var(--inputWidth);
+  max-width: var(--inputWidth);
+  margin: auto;
 }
 
 /* Create groups content */
@@ -275,8 +299,23 @@ figure {
 
 .create-group p {
   line-height: var(--spacerMedium);
-
   text-align: center;
+}
+
+.create-group-form {
+  max-width: var(--inputWidth);
+  margin: auto;
+}
+
+/* Create event content */
+
+.create-event {
+  height: 55rem;
+}
+
+.create-event-form {
+  max-width: var(--inputWidth);
+  margin: auto;
 }
 
 /* Mobile screen breakpoint */
@@ -328,20 +367,15 @@ figure {
   }
 
   hr {
-    margin-top: 3rem;
-    margin-bottom: 3rem;
+    max-width: 30rem;
   }
 
-  .signup, .login {
-    max-width: 20em;
-  }
-
-  .signup-option, .group-list {
-    margin-bottom: 15rem;
+  .signup-option {
+    margin-bottom: 10rem;
   }
 
   .group-info {
-    max-width: 40%;
+    width: 45%;
   }
 
   .group-desc {
@@ -349,21 +383,16 @@ figure {
   }
 
   .upcoming-events {
-    width: 40%;
+    width: 45%;
   }
 
   .all-group-content {
-    display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: baseline;
-    margin-bottom: 10rem;
-  }
-
-  .all-group-content hr {
-    display: none;
+    margin-bottom: 5rem;
   }
 
   .create-group-form {
-    max-width: 30rem;
+    max-width: var(--inputWidth);
   }
 }

@@ -9,11 +9,11 @@
       <p class="group-desc"><?php echo $group['description']; ?>
       </p>
       <a href="#">
-        <button class="button">Invite People</button>
+
       </a>
     </div>
 
-    <hr>
+    <hr class="hr-footer">
 
     <div class="upcoming-events">
       <h3>Upcoming events</h3>
@@ -23,9 +23,16 @@
       <?php endforeach; ?>
       </ul>
     </div>
+    <hr class="hr-footer">
   </div>
 
-  <a href="index.php?page=createEvent" class="hyperlink">Create event</a>
+  <div class="group-buttons">
+    <button class="button">Invite People</button>
+    <a href="index.php?page=createEvent" class="hyperlink">
+      <button class="button">Create new event</button>
+    </a>
+  </div>
+
 
 
 </section>

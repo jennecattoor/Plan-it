@@ -1,13 +1,13 @@
 <section class="content">
 
-  <div class="create-group">
+  <div class="create-event">
       <h2>Create an event</h2>
       <hr>
-      <p>Creating a event gives you the opportunity to invite the friends you want.
+      <p class="subtext">Creating a event gives you the opportunity to invite the friends you want.
         <br> <br>
         Then create an awesome event and let the party begin!</p>
       <hr>
-      <div class="create-group-form">
+      <div class="create-event-form">
         <form method="post">
         <input type="hidden" name="action" value="createEvent">
             <label class="label">Name of Event: <br>
