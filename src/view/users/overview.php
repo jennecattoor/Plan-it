@@ -5,17 +5,17 @@
 <div class="group-list">
   <h3 class="group-heading">My Groups</h3>
 
-<?php foreach($user->groups as $group): ?>
-  <a href="index.php?page=group&id=<?php echo $group['id']; ?>">
-    <div class="group-entry">
-      <figure></figure>
-      <div>
-        <span class="overview-group-name"><?php echo $group['name']; ?></span><br>
-        <span>Upcoming event: <?php echo $group['description']; ?></span>
+  <?php foreach($user->groups as $group): ?>
+    <a href="index.php?page=group&id=<?php echo $group['id']; ?>">
+      <div class="group-entry">
+        <figure></figure>
+        <div>
+          <span class="overview-group-name"><?php echo $group['name']; ?></span><br>
+          <span>Upcoming event: <?php echo $group['description']; ?></span>
+        </div>
       </div>
-    </div>
-  </a>
-<?php endforeach; ?>
+    </a>
+  <?php endforeach; ?>
 </div>
 
   <p class="subtext">Have you been invited to join a group? <br> Enter the code here</p>

@@ -188,12 +188,15 @@ h3 {
 
 .button {
   width: 100%;
+  min-width: 10rem;
   max-width: var(--inputWidth);
   padding: var(--spacerSmall);
   background-color: var(--colorSecondary);
   color: var(--colorLightest);
   letter-spacing: 1px;
   border: none;
+  display: block;
+  margin: auto;
   margin-top: var(--spacerRegular);
 }
 
@@ -226,8 +229,10 @@ a {
 /* Overview page styling */
 
 .group-list {
+  margin: auto;
   margin-top: var(--spacerMedium);
   margin-bottom: 5rem;
+  max-width: 40rem;
 }
 
 .group-list a {
@@ -241,8 +246,11 @@ a {
   padding: var(--spacerRegular);
   display: flex;
   align-items: center;
+  margin: auto;
   margin-top: var(--spacerSmall);
   line-height: var(--spacerBig);
+  max-width: 40rem;
+
 }
 
 .group-entry div {
@@ -318,6 +326,16 @@ figure {
   margin: auto;
 }
 
+/* Event detail view */
+
+.event-info {
+  max-width: 30rem;
+  margin: auto;
+}
+
+.event-info h3 {
+  text-align: center;
+}
 /* Mobile screen breakpoint */
 
 @media only screen and (max-width: 845px) {
@@ -374,16 +392,8 @@ figure {
     margin-bottom: 10rem;
   }
 
-  .group-info {
-    width: 45%;
-  }
-
   .group-desc {
     line-height: var(--spacerMedium);
-  }
-
-  .upcoming-events {
-    width: 45%;
   }
 
   .all-group-content {
