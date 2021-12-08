@@ -28,4 +28,8 @@ class Event extends Model {
     return $this->belongsToMany(Group::class);
   }
 
+  public function items(){
+    return $this->belongsToMany(Item::class);
+  }
+
 }

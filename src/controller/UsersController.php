@@ -4,6 +4,7 @@ require_once __DIR__ . '/Controller.php';
 require_once __DIR__ . '/../model/User.php';
 require_once __DIR__ . '/../model/Group.php';
 require_once __DIR__ . '/../model/Event.php';
+require_once __DIR__ . '/../model/Item.php';
 
 
 class UsersController extends Controller {
@@ -140,12 +141,15 @@ class UsersController extends Controller {
   public function event() {
     if(!empty($_GET['id'])) {
       $event = Event::find($_GET['id']);
+      $user = User::all();
     }
     if(empty($event)){
       header('Location:index.php');
       exit();
     }
+
     $this->set('event', $event);
+    $this->set('user', $user);
     $this->set('title', 'Event');
   }
 }
