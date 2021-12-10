@@ -3,6 +3,7 @@
 
 html {
   box-sizing: border-box;
+  height: 100%;
 }
 
 /* stylelint-disable*/
@@ -16,14 +17,20 @@ html {
 body {
   font-family: var(--font);
   background-color: var(--colorLightest);
+  height: 90%;
 }
 
 main {
   padding-bottom: 5rem;
+  min-height: 100%;
 }
 
 .color--accent {
   color: var(--colorMain);
+}
+
+.color--white {
+  color: white;
 }
 
 .error {
@@ -40,7 +47,7 @@ main {
   justify-content: space-between;
   align-items: center;
   margin-top: 1rem;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
 }
 
 .title {
@@ -93,6 +100,7 @@ footer {
   background-color: var(--colorSecondary);
   padding: var(--spacerBig);
   text-align: center;
+  width: 100%;
 }
 
 .footer-link {
@@ -122,16 +130,21 @@ p {
   line-height: var(--spacerMedium);
 }
 
+.background {
+  background-image: none;
+}
+
 /* Content */
 
 .content {
   margin: auto;
-  max-width: 80%;
+  max-width: 70%;
+  height: 100%;
 }
 
 h2 {
   font-size: var(--fontBig);
-  margin-top: var(--spacerRegular);
+  padding-top: var(--spacerRegular);
   text-align: center;
   line-height: var(--spacerBig);
 }
@@ -140,6 +153,7 @@ h3 {
   font-size: var(--fontMedium);
   line-height: var(--spacerBig);
   font-weight: var(--fontWeightBold);
+  margin-top: var(--spacerBig);
 }
 
 .subheading {
@@ -214,7 +228,7 @@ a {
   text-align: center;
   margin: auto;
   margin-top: var(--spacerRegular);
-  margin-bottom: 5rem;
+  padding-bottom: 5rem;
   line-height: 1.3rem;
   color: var(--colorText);
   max-width: var(--inputWidth);
@@ -380,12 +394,29 @@ figure {
 
 @media only screen and (min-width: 768px) {
 
-  .content {
-    margin-top: 6rem;
-  }
-
   hr {
     max-width: 30rem;
+  }
+
+  footer {
+    text-align: left;
+    line-height: var(--spacerBig);
+  }
+
+  footer hr {
+    display: none;
+  }
+
+  .footer-menu {
+    max-width: 40rem;
+  }
+
+  .footer-content {
+    max-width: 40rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .signup-option {
@@ -405,4 +436,58 @@ figure {
   .create-group-form {
     max-width: var(--inputWidth);
   }
+}
+
+@media only screen and (min-width: 1360px) {
+
+  /* stylelint-disable */
+  .background {
+    background-image: url('assets/img/homepage-background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+  }
+  /* stylelint-enable */
+
+  .all-access-info {
+    background-color: white;
+    width: 40rem;
+    margin-left: auto;
+    min-height: 50rem;
+    height: 100%;
+  }
+
+  .content {
+    margin-top: 0;
+    max-width: 100%;
+    height: 100%;
+  }
+
+  main {
+    padding-bottom: 0;
+  }
+
+  body {
+    height: 100%;
+  }
+
+  hr {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  h3 {
+    margin-bottom: 2rem;
+  }
+
+  .signup-option {
+    margin-bottom: 0;
+  }
+
+  .footer-content {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
 }
