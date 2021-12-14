@@ -8,14 +8,14 @@ require_once __DIR__ . '/../model/Item.php';
 
 function izrand($length = 6) {
 
-                $random_string="";
-                while(strlen($random_string)<$length && $length > 0) {
-                        $randnum = mt_rand(0,61);
-                        $random_string .= ($randnum < 10) ?
-                                chr($randnum+48) : ($randnum < 36 ?
-                                        chr($randnum+55) : $randnum+61);
-                 }
-                return $random_string;
+  $random_string="";
+    while(strlen($random_string)<$length && $length > 0) {
+        $randnum = mt_rand(0,61);
+          $random_string .= ($randnum < 10) ?
+            chr($randnum+48) : ($randnum < 36 ?
+                hr($randnum+55) : $randnum+61);
+    }
+    return $random_string;
 }
 
 
@@ -168,6 +168,24 @@ class UsersController extends Controller {
     if(empty($event)){
       header('Location:index.php');
       exit();
+    }
+
+    if (!empty($_POST['action'])) {
+      if ($_POST['action'] == 'necessity') {
+        $createItem = new Item();
+        $createItem->name = $_POST['addItem'];
+        $errors = Item::validate($createItem);
+        if (empty($errors)) {
+          $createItem->save();
+          $item = Item::where('name', $_POST['addItem']);
+          $itemnew = $item->first()->id;
+          $event->items()->attach($itemnew);
+          header('Location: index.php?' . http_build_query($_GET));
+          exit();
+        } else {
+          $this->set('errors', $errors);
+        }
+      }
     }
 
     $this->set('event', $event);

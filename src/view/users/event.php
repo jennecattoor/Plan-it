@@ -25,10 +25,26 @@
            }
 
           if(empty($item->users->first()->name)) {
-            ?><a href=#>I will do this</a>
+            ?><form method="post">
+              <input type="hidden" name="action" value="doItem">
+              <input type="submit" value="I will do this" class="">
+        </form>
           <?php ;} ?>
         </li>
        <?php endforeach; ?>
+       <div class="create-group-form">
+        <form method="post">
+        <input type="hidden" name="action" value="necessity">
+            <label class="label">add a necessity: <br>
+                <input type="text" name="addItem" class="input" placeholder="Bring ..." required value="<?php
+                    if (!empty($_POST['addItem'])) echo $_POST['addItem'];
+                ?>">
+                <span class="error"><?php if (!empty($errors['addItem'])) echo $errors['addItem']; ?></span>
+            </label>
+            <input type="submit" value="add" class="button">
+        </form>
+
+      </div>
     </div>
 
   </div>
