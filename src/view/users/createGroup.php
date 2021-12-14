@@ -22,6 +22,12 @@
                 ?>">
                 <span class="error"><?php if (!empty($errors['groupDesc'])) echo $errors['groupDesc']; ?></span>
             </label>
+            <label class="label">Group color: <br>
+                <input type="color" name="groupColor" class="input" required value="<?php
+                    if (!empty($_POST['groupColor'])) echo $_POST['groupColor'];
+                ?>">
+                <span class="error"><?php if (!empty($errors['groupColor'])) echo $errors['groupColor']; ?></span>
+            </label>
             <input type="submit" value="Create group" class="button">
         </form>
 

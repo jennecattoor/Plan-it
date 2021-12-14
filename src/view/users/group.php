@@ -28,7 +28,7 @@
 
   <div class="group-buttons">
     <button class="button">Invite People: <?php echo $group['code']; ?></button>
-    <a href="index.php?page=createEvent" class="hyperlink">
+    <a href="index.php?page=createEvent&id=<?php echo $group['id']; ?>">
       <button class="button">Create new event</button>
     </a>
   </div>

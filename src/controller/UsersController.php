@@ -6,6 +6,18 @@ require_once __DIR__ . '/../model/Group.php';
 require_once __DIR__ . '/../model/Event.php';
 require_once __DIR__ . '/../model/Item.php';
 
+function izrand($length = 6) {
+
+                $random_string="";
+                while(strlen($random_string)<$length && $length > 0) {
+                        $randnum = mt_rand(0,61);
+                        $random_string .= ($randnum < 10) ?
+                                chr($randnum+48) : ($randnum < 36 ?
+                                        chr($randnum+55) : $randnum+61);
+                 }
+                return $random_string;
+}
+
 
 class UsersController extends Controller {
 
@@ -82,16 +94,22 @@ class UsersController extends Controller {
   }
 
   public function createGroup() {
+    $user = User::find($_SESSION['id']);
 
     if (!empty($_POST['action'])) {
       if ($_POST['action'] == 'createGroup') {
         $createGroup = new Group();
         $createGroup->name = $_POST['groupName'];
         $createGroup->description = $_POST['groupDesc'];
+        $createGroup->color = $_POST['groupColor'];
+        $createGroup->code = $groupCode = izrand();
         $errors = Group::validate($createGroup);
         if (empty($errors)) {
           $createGroup->save();
-          header('Location: index.php?' . http_build_query($_GET));
+          $group = Group::where('code', $groupCode);
+          $groupnew = $group->first()->id;
+          $user->groups()->attach($groupnew);
+          header('Location: index.php?page=overview');
           exit();
         } else {
           $this->set('errors', $errors);
@@ -116,6 +134,7 @@ class UsersController extends Controller {
   }
 
   public function createEvent() {
+    $group = Group::find($_GET['id']);
 
     if (!empty($_POST['action'])) {
       if ($_POST['action'] == 'createEvent') {
@@ -127,7 +146,10 @@ class UsersController extends Controller {
         $errors = Event::validate($createEvent);
         if (empty($errors)) {
           $createEvent->save();
-          header('Location: index.php?' . http_build_query($_GET));
+          $event = Event::where('name', $_POST['eventName'])->where('description', $_POST['eventDesc'])->where('location', $_POST['eventLocation']);
+          $eventnew = $event->first()->id;
+          $group->events()->attach($eventnew);
+          header('Location: index.php?page=group&id=' . $_GET['id']);
           exit();
         } else {
           $this->set('errors', $errors);

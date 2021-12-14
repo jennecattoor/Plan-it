@@ -11,7 +11,7 @@
 
     <p><?php echo $event['description']; ?></p>
     <br>
-    <p><?php echo $event['location']; ?></p>
+    <p>Location: <?php echo $event['location']; ?></p>
 
     <hr>
 

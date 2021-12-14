@@ -8,10 +8,10 @@
   <?php foreach($user->groups as $group): ?>
     <a href="index.php?page=group&id=<?php echo $group['id']; ?>">
       <div class="group-entry">
-        <figure></figure>
+        <figure style="background-color:<?php echo $group['color']; ?>"></figure>
         <div>
           <span class="overview-group-name"><?php echo $group['name']; ?></span><br>
-          <span>Upcoming event: <?php echo $group['description']; ?></span>
+          <span>Upcoming event: <?php echo $group->events->first()->name; ?> - <?php echo $group->events->first()->date; ?></span>
         </div>
       </div>
     </a>
