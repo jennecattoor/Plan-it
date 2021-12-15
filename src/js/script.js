@@ -19,3 +19,13 @@ function closeMenu() {
   hamburger.classList.remove('active');
   navMenu.classList.remove('active');
 }
+
+const copyBtn = document.getElementById('copy-btn');
+
+copyBtn.onclick = function() {copyFunc();};
+
+function copyFunc() {
+  const copyText = document.getElementById('group-code');
+  navigator.clipboard.writeText(copyText.innerHTML).then(copyBtn.innerHTML = 'Copied code to clipboard!');
+}
+

@@ -18,7 +18,7 @@
             <ul class="nav-menu">
               <?php if ($_SESSION['valid'] == false) {?>
               <li class="nav-item">
-                  <a a href="index.php?page=index" class="nav-link">Sign Up</a>
+                  <a href="index.php?page=index" class="nav-link">Sign Up</a>
               </li>
               <li class="nav-item">
                  <a href="index.php?page=login" class="nav-link">Login</a>
@@ -50,21 +50,17 @@
         <li class="footer-item">
             <a href="index.php?page=index" class="footer-link">Home</a>
         </li>
-        <hr class="hr-footer">
         <li class="footer-item">
             <a href="index.php?page=login" class="footer-link">Login</a>
         </li>
         <?php }; ?>
         <?php if ($_SESSION['valid'] == true) {?>
-        <hr class="hr-footer">
         <li class="footer-item">
             <a href="index.php?page=overview" class="footer-link">Overview</a>
         </li>
-        <hr class="hr-footer">
         <li class="footer-item">
             <a href="index.php?page=createGroup" class="footer-link">Create Group</a>
         </li>
-        <hr class="hr-footer">
         <li class="footer-item">
             <a href="index.php?page=group" class="footer-link">Group Detail</a>
         </li>

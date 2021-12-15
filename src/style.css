@@ -206,10 +206,12 @@ h3 {
   min-width: 10rem;
   max-width: var(--inputWidth);
   padding: var(--spacerSmall);
+  box-sizing: border-box;
   background-color: var(--colorSecondary);
   color: var(--colorLightest);
   letter-spacing: 1px;
   border: none;
+  border-radius: 3px;
   display: block;
   margin: auto;
   margin-top: var(--spacerRegular);
@@ -368,7 +370,9 @@ figure {
   margin-left: var(--spacerSmall);
   color: var(--colorLightest);
   background-color: var(--colorMain);
-  border: 2px solid var(--colorSecondary);
+  padding: .3rem;
+  border: none;
+  border-radius: 3px;
 }
 
 .assign-btn:hover {
@@ -471,7 +475,6 @@ figure {
   .all-group-content {
     justify-content: space-around;
     align-items: baseline;
-    margin-bottom: 5rem;
   }
 
   .create-group-form {
@@ -500,20 +503,22 @@ figure {
     box-sizing: content-box;
     min-height: 50rem;
     height: 100%;
+    margin-bottom: -5rem;
   }
 
   .content {
     margin-top: 0;
     max-width: 100%;
     min-height: 100%;
-  }
-
-  main {
-    padding-bottom: 0;
+    padding-bottom: 5rem;
   }
 
   body {
     min-height: 100%;
+  }
+
+  main {
+    padding: 0;
   }
 
   hr {
