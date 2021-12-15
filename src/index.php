@@ -1,4 +1,13 @@
 <?php
+if (basename(dirname(dirname(__FILE__))) != 'src') {
+  // do not show warnings or errors in production mode
+  ini_set('display_errors', false);
+}else{
+  // show everything in development mode
+  ini_set('display_errors', true);
+  error_reporting(E_ALL);
+}
+
 session_start();
 ini_set('display_errors', true);
 error_reporting(E_ALL);
