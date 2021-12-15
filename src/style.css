@@ -395,6 +395,13 @@ figure {
   margin-right: var(--spacerSmall);
 }
 
+.delete {
+  color: tomato;
+  background-color: inherit;
+  border: none;
+  cursor: pointer;
+}
+
 /* Mobile screen breakpoint */
 
 @media only screen and (max-width: 845px) {

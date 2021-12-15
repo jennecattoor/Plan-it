@@ -163,7 +163,7 @@ class UsersController extends Controller {
   public function event() {
     if(!empty($_GET['id'])) {
       $event = Event::find($_GET['id']);
-      $user = User::all();
+      $user = User::find($_SESSION['id']);
     }
     if(empty($event)){
       header('Location:index.php');
@@ -191,15 +191,23 @@ class UsersController extends Controller {
     if(!empty($_POST['action'])){
       if($_POST['action'] === 'doItem'){
         $item = $_POST['itemID'];
-        $userItem = User::find($_SESSION['id']);
-        $userItem->items()->attach($item);
+        $user->items()->attach($item);
         header('Location: index.php?' . http_build_query($_GET));
         exit();
       }
     }
 
-    $this->set('event', $event);
+    if(!empty($_POST['action'])){
+      if($_POST['action'] === 'deleteItem'){
+        $item = $_POST['itemID'];
+        $user->items()->detach($item);
+        header('Location: index.php?' . http_build_query($_GET));
+        exit();
+      }
+    }
+
     $this->set('user', $user);
+    $this->set('event', $event);
     $this->set('title', 'Event');
   }
 }

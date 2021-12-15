@@ -25,6 +25,14 @@
           <?php echo $item['name']; ?> - <?php
           if(!empty($item->users->first()->name)) {
             echo $item->users->first()->name;
+
+            if($item->users->first()->name == $user['name']){
+              ?><form method="post">
+              <input type="hidden" name="action" value="deleteItem">
+              <input type="submit" value="&#10007" class="delete">
+              <input type="hidden" name="itemID" value="<?php echo $_POST['itemID'] = $item->id; ?>"/>
+              </form><?php
+            }
            }
 
           if(empty($item->users->first()->name)) {
