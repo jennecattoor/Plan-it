@@ -23,7 +23,7 @@
       <?php endforeach; ?>
       </ul>
     </div>
-    <button class="button">Create new event</button>
+    <button class="button"><a href="index.php?page=createEvent&id=<?php echo $group['id']; ?>">Create new event</a></button>
     <hr class="hr-footer">
   </div>
 
@@ -31,9 +31,6 @@
     <p>Want to invite people to the group? Click the button below to copy the invite code and send it to your friends!</p>
     <br>
     <button class="button" id="copy-btn">Copy invite code:<p id="group-code"><?php echo $group['code']; ?></p></button>
-    <a href="index.php?page=createEvent&id=<?php echo $group['id']; ?>">
-
-    </a>
   </div>
 
 

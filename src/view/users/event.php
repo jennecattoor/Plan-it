@@ -31,6 +31,7 @@
             ?><form method="post">
               <input type="hidden" name="action" value="doItem">
               <input type="submit" value="I will do this" class="assign-btn">
+              <input type="hidden" name="itemID" value="<?php echo $_POST['itemID'] = $item->id; ?>"/>
         </form>
           <?php ;} ?>
         </li>

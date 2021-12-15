@@ -188,6 +188,16 @@ class UsersController extends Controller {
       }
     }
 
+    if(!empty($_POST['action'])){
+      if($_POST['action'] === 'doItem'){
+        $item = $_POST['itemID'];
+        $userItem = User::find($_SESSION['id']);
+        $userItem->items()->attach($item);
+        header('Location: index.php?' . http_build_query($_GET));
+        exit();
+      }
+    }
+
     $this->set('event', $event);
     $this->set('user', $user);
     $this->set('title', 'Event');
