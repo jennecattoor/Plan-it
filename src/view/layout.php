@@ -16,18 +16,22 @@
       <h1 class="title"><span class="color--accent">Eve</span>plan</h1>
       <nav class="navbar">
             <ul class="nav-menu">
-                <li class="nav-item">
-                    <a href="index.php?page=index" class="nav-link">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="index.php?page=login" class="nav-link">Login</a>
-                </li>
-                <li class="nav-item">
-                    <a href="index.php?page=overview" class="nav-link">Overview</a>
-                </li>
-                <li class="nav-item">
-                    <a href="index.php?page=createGroup" class="nav-link">Create Group</a>
-                </li>
+              <?php if ($_SESSION['valid'] == false) {?>
+              <li class="nav-item">
+                  <a a href="index.php?page=index" class="nav-link">Sign Up</a>
+              </li>
+              <li class="nav-item">
+                 <a href="index.php?page=login" class="nav-link">Login</a>
+              </li>
+              <?php }; ?>
+              <?php if ($_SESSION['valid'] == true) {?>
+              <li class="nav-item">
+                  <a href="index.php?page=overview" class="nav-link">Home</a>
+              </li>
+              <li class="nav-item">
+                  <a href="index.php?page=createGroup" class="nav-link">Create Group</a>
+              </li>
+              <?php }; ?>
             </ul>
             <div class="hamburger">
                 <span class="bar"></span>
@@ -40,27 +44,36 @@
 
 </main>
 <footer>
-      <ul class="footer-menu">
-                <li class="footer-item">
-                    <a href="index.php?page=index" class="footer-link">Home</a>
-                </li>
-                <hr>
-                <li class="footer-item">
-                    <a href="index.php?page=login" class="footer-link">Login</a>
-                </li>
-                <hr>
-                <li class="footer-item">
-                    <a href="index.php?page=overview" class="footer-link">Overview</a>
-                </li>
-                <hr>
-                <li class="footer-item">
-                    <a href="index.php?page=createGroup" class="footer-link">Create Group</a>
-                </li>
-                <hr>
-                <li class="footer-item">
-                    <a href="index.php?page=group" class="footer-link">Group Detail</a>
-                </li>
-            </ul>
+  <div class="footer-content">
+        <ul class="footer-menu">
+        <?php if ($_SESSION['valid'] == false) {?>
+        <li class="footer-item">
+            <a href="index.php?page=index" class="footer-link">Home</a>
+        </li>
+        <hr class="hr-footer">
+        <li class="footer-item">
+            <a href="index.php?page=login" class="footer-link">Login</a>
+        </li>
+        <?php }; ?>
+        <?php if ($_SESSION['valid'] == true) {?>
+        <hr class="hr-footer">
+        <li class="footer-item">
+            <a href="index.php?page=overview" class="footer-link">Overview</a>
+        </li>
+        <hr class="hr-footer">
+        <li class="footer-item">
+            <a href="index.php?page=createGroup" class="footer-link">Create Group</a>
+        </li>
+        <hr class="hr-footer">
+        <li class="footer-item">
+            <a href="index.php?page=group" class="footer-link">Group Detail</a>
+        </li>
+        <?php }; ?>
+      </ul>
+
+      <h1 class="title"><span class="color--accent">Eve</span><span class="color--white">plan</span></h1>
+  </div>
+
     </footer>
   <?php echo $js; ?>
 </body>

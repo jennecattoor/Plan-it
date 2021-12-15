@@ -3,6 +3,7 @@
 
 html {
   box-sizing: border-box;
+  height: 100%;
 }
 
 /* stylelint-disable*/
@@ -16,14 +17,20 @@ html {
 body {
   font-family: var(--font);
   background-color: var(--colorLightest);
+  height: 90%;
 }
 
 main {
   padding-bottom: 5rem;
+  min-height: 100%;
 }
 
 .color--accent {
   color: var(--colorMain);
+}
+
+.color--white {
+  color: white;
 }
 
 .error {
@@ -40,7 +47,7 @@ main {
   justify-content: space-between;
   align-items: center;
   margin-top: 1rem;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
 }
 
 .title {
@@ -93,6 +100,7 @@ footer {
   background-color: var(--colorSecondary);
   padding: var(--spacerBig);
   text-align: center;
+  width: 100%;
 }
 
 .footer-link {
@@ -107,28 +115,36 @@ footer li {
 }
 
 hr {
-  margin-top: var(--spacerBig);
-  margin-bottom: var(--spacerRegular);
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  height: 2px;
+  border: none;
+  background-color: var(--colorMain);
+}
+
+.hr-footer {
+  background-color: var(--colorGray);
 }
 
 p {
   line-height: var(--spacerMedium);
 }
 
-footer hr {
-  max-width: 100%;
+.background {
+  background-image: none;
 }
 
 /* Content */
 
 .content {
   margin: auto;
-  max-width: 80%;
+  max-width: 70%;
+  height: 100%;
 }
 
 h2 {
   font-size: var(--fontBig);
-  margin-top: var(--spacerRegular);
+  padding-top: var(--spacerRegular);
   text-align: center;
   line-height: var(--spacerBig);
 }
@@ -137,6 +153,8 @@ h3 {
   font-size: var(--fontMedium);
   line-height: var(--spacerBig);
   font-weight: var(--fontWeightBold);
+  margin-top: var(--spacerBig);
+  margin-bottom: var(--spacerSmall);
 }
 
 .subheading {
@@ -146,6 +164,7 @@ h3 {
 .signup, .login {
   margin: auto;
   margin-bottom: var(--spacerBig);
+  max-width: var(--inputWidth);
 }
 
 .section__title {
@@ -184,13 +203,21 @@ h3 {
 
 .button {
   width: 100%;
-  max-width: 20rem;
+  min-width: 10rem;
+  max-width: var(--inputWidth);
   padding: var(--spacerSmall);
   background-color: var(--colorSecondary);
   color: var(--colorLightest);
   letter-spacing: 1px;
   border: none;
+  display: block;
+  margin: auto;
   margin-top: var(--spacerRegular);
+}
+
+.button:hover {
+  background-color: #1c2e55;
+  cursor: pointer;
 }
 
 a {
@@ -207,16 +234,25 @@ a {
   text-align: center;
   margin: auto;
   margin-top: var(--spacerRegular);
-  margin-bottom: 5rem;
+  padding-bottom: 5rem;
   line-height: 1.3rem;
   color: var(--colorText);
-  max-width: 20rem;
+  max-width: var(--inputWidth);
+}
+
+.subtext {
+  max-width: 45ch;
+  margin: auto;
+  text-align: center;
 }
 
 /* Overview page styling */
 
 .group-list {
+  margin: auto;
   margin-top: var(--spacerMedium);
+  margin-bottom: 5rem;
+  max-width: 40rem;
 }
 
 .group-list a {
@@ -225,13 +261,16 @@ a {
 }
 
 .group-entry {
-  border: 1px solid var(--colorMain);
+  border: 2px solid var(--colorMain);
   border-radius: 5px;
   padding: var(--spacerRegular);
   display: flex;
   align-items: center;
+  margin: auto;
   margin-top: var(--spacerSmall);
   line-height: var(--spacerBig);
+  max-width: 40rem;
+
 }
 
 .group-entry div {
@@ -241,7 +280,6 @@ a {
 figure {
   min-width: 3rem;
   min-height: 3rem;
-  background-color: tomato;
   border-radius: 50%;
 }
 
@@ -255,7 +293,7 @@ figure {
 .group-desc {
   margin-top: var(--spacerSmall);
   margin-bottom: var(--spacerRegular);
-  max-width: 50ch;
+  max-width: 45ch;
 }
 
 .upcoming-events {
@@ -264,7 +302,20 @@ figure {
 
 .upcoming-events ul {
   margin-top: var(--spacerSmall);
+  margin-bottom: var(--spacerBig);
   line-height: var(--spacerBig);
+}
+
+.all-group-content {
+  margin: auto;
+  width: 100%;
+  max-width: 30rem;
+}
+
+.group-buttons {
+  min-width: var(--inputWidth);
+  max-width: var(--inputWidth);
+  margin: auto;
 }
 
 /* Create groups content */
@@ -275,8 +326,69 @@ figure {
 
 .create-group p {
   line-height: var(--spacerMedium);
-
   text-align: center;
+}
+
+.create-group-form {
+  max-width: var(--inputWidth);
+  margin: auto;
+}
+
+/* Create event content */
+
+.create-event {
+  height: 55rem;
+}
+
+.create-event-form {
+  max-width: var(--inputWidth);
+  margin: auto;
+}
+
+/* Event detail view */
+
+.event-info {
+  max-width: 30rem;
+  margin: auto;
+}
+
+.event-info h3 {
+  text-align: center;
+}
+
+.necessities h3 {
+  text-align: left;
+}
+
+.necessities label {
+  margin-top: 5rem;
+}
+
+.assign-btn {
+  margin-left: var(--spacerSmall);
+  color: var(--colorLightest);
+  background-color: var(--colorMain);
+  border: 2px solid var(--colorSecondary);
+}
+
+.assign-btn:hover {
+  background-color: rgb(255, 131, 74);
+}
+
+.item-list {
+  line-height: var(--spacerXBig);
+  display: flex;
+  align-items: center;
+  list-style: none;
+  font-size: var(--spacerMedium);
+}
+
+.item-list::before {
+  content: '\2022';
+  font-weight: bold;
+  color: var(--colorMain);
+  font-size: var(--fontBig);
+  margin-right: var(--spacerSmall);
 }
 
 /* Mobile screen breakpoint */
@@ -323,47 +435,103 @@ figure {
 
 @media only screen and (min-width: 768px) {
 
-  .content {
-    margin-top: 6rem;
-  }
-
   hr {
-    margin-top: 3rem;
-    margin-bottom: 3rem;
+    max-width: 30rem;
   }
 
-  .signup, .login {
-    max-width: 20em;
+  footer {
+    text-align: left;
+    line-height: var(--spacerBig);
   }
 
-  .signup-option, .group-list {
-    margin-bottom: 15rem;
+  footer hr {
+    display: none;
   }
 
-  .group-info {
-    max-width: 40%;
+  .footer-menu {
+    max-width: 40rem;
+  }
+
+  .footer-content {
+    max-width: 40rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .signup-option {
+    margin-bottom: 10rem;
   }
 
   .group-desc {
     line-height: var(--spacerMedium);
   }
 
-  .upcoming-events {
-    width: 40%;
-  }
-
   .all-group-content {
-    display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: baseline;
-    margin-bottom: 10rem;
-  }
-
-  .all-group-content hr {
-    display: none;
+    margin-bottom: 5rem;
   }
 
   .create-group-form {
-    max-width: 30rem;
+    max-width: var(--inputWidth);
   }
+}
+
+@media only screen and (min-width: 1360px) {
+
+  /* stylelint-disable */
+  .background {
+    background-image: url('assets/img/homepage-background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    background-position: center center;
+    height: 100%;
+  }
+  /* stylelint-enable */
+
+  .all-access-info {
+    background-color: white;
+    width: 40rem;
+    margin-left: auto;
+    box-sizing: content-box;
+    min-height: 50rem;
+    height: 100%;
+  }
+
+  .content {
+    margin-top: 0;
+    max-width: 100%;
+    min-height: 100%;
+  }
+
+  main {
+    padding-bottom: 0;
+  }
+
+  body {
+    min-height: 100%;
+  }
+
+  hr {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  h3 {
+    margin-bottom: 2rem;
+  }
+
+  .signup-option {
+    margin-bottom: 0;
+  }
+
+  .footer-content {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
 }

@@ -9,22 +9,29 @@
       <p class="group-desc"><?php echo $group['description']; ?>
       </p>
       <a href="#">
-        <button class="button">Invite People</button>
+
       </a>
     </div>
 
-    <hr>
+    <hr class="hr-footer">
 
     <div class="upcoming-events">
       <h3>Upcoming events</h3>
       <ul>
-      <?php foreach($events as $event): ?>
-        <li><a href="#"><?php echo $event['name']; ?> #1</a> - <?php echo $event['date']; ?></li>
+      <?php foreach($group->events as $event): ?>
+        <li><a href="index.php?page=event&id=<?php echo $event['id']; ?>"><?php echo $event['name']; ?></a> - <?php echo $event['date']; ?></li>
       <?php endforeach; ?>
       </ul>
     </div>
+    <hr class="hr-footer">
   </div>
 
+  <div class="group-buttons">
+    <button class="button">Invite People: <?php echo $group['code']; ?></button>
+    <a href="index.php?page=createEvent&id=<?php echo $group['id']; ?>">
+      <button class="button">Create new event</button>
+    </a>
+  </div>
 
 
 
