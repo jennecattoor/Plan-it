@@ -4,15 +4,16 @@
   --colorMain: #fca311;
   --colorSecondary: #14213d;
   --colorGray: #e5e5e5;
-  --spacerXsmall: .3rem /* 8px */;
-  --spacerSmall: .75rem; /* 12px */
-  --spacerRegular: 1rem; /* 16px */
-  --spacerMedium: 1.5rem; /* 24px */
-  --spacerBig: 1.88rem; /* 30px */
-  --fontSmall: .75rem; /* 12px */
-  --fontRegular: 1.13rem; /* 18px */
+  --spacerXsmall: .2rem /* 8px */;
+  --spacerSmall: .5rem; /* 12px */
+  --spacerRegular: .75rem; /* 16px */
+  --spacerMedium: 1.25rem; /* 24px */
+  --spacerBig: 1.5rem; /* 30px */
+  --spacerXBig: 2rem /* 40px */;
+  --fontSmall: .5rem; /* 12px */
+  --fontRegular: 1rem; /* 18px */
   --fontMedium: 1.25rem; /* 20px */
-  --fontBig: 1.75rem; /* 28px */
+  --fontBig: 1.5rem; /* 28px */
   --font: 'Poppins', sans-serif;
   --fontWeightRegular: 400;
   --fontWeightBold: 600;

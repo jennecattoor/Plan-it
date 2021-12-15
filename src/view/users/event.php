@@ -15,10 +15,13 @@
 
     <hr>
 
-    <div>
-      <p> Necessities to be brought </p>
+    <div class="necessities">
+      <h3> What needs to be brought</h3>
+      <p>See who's responsible for different items, and assign yourself something that needs to be brought to the event!</p>
+      <br>
+      <br>
     <?php foreach($event->items as $item): ?>
-        <li>
+        <li class="item-list">
           <?php echo $item['name']; ?> - <?php
           if(!empty($item->users->first()->name)) {
             echo $item->users->first()->name;
@@ -27,7 +30,7 @@
           if(empty($item->users->first()->name)) {
             ?><form method="post">
               <input type="hidden" name="action" value="doItem">
-              <input type="submit" value="I will do this" class="">
+              <input type="submit" value="I will do this" class="assign-btn">
         </form>
           <?php ;} ?>
         </li>
@@ -35,7 +38,7 @@
        <div class="create-group-form">
         <form method="post">
         <input type="hidden" name="action" value="necessity">
-            <label class="label">add a necessity: <br>
+            <label class="label">Add something to the list: <br>
                 <input type="text" name="addItem" class="input" placeholder="Bring ..." required value="<?php
                     if (!empty($_POST['addItem'])) echo $_POST['addItem'];
                 ?>">

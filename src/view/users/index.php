@@ -34,8 +34,6 @@
 
     <p class="login-option">Already have an account? <a href="index.php?page=login" class="hyperlink">Log in<a></p>
 
-    <hr>
-
     <div class="tutorial-info">
       <img src="./assets/img/group.svg" alt="group-icon">
       <h3>Create a groups and invite your friends and family.</h3>
