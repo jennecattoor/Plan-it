@@ -5,7 +5,7 @@
       <hr>
       <p class="subtext">Creating a group gives you the opportunity to invite the friends you want.
         <br> <br>
-        Then create an awesome event and let the party begin!</p>
+        Then create awesome events and let the party begin!</p>
       <hr>
       <div class="create-group-form">
         <form method="post">

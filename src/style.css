@@ -226,6 +226,11 @@ a {
   color: var(--colorMain);
 }
 
+.no-decoration {
+  text-decoration: none;
+  color: inherit;
+}
+
 .tutorial-info img {
   max-width: 5rem;
   margin-bottom: var(--spacerRegular);
@@ -315,7 +320,7 @@ figure {
 }
 
 .group-buttons {
-  min-width: var(--inputWidth);
+  min-width: 10rem;
   max-width: var(--inputWidth);
   margin: auto;
 }
@@ -339,7 +344,8 @@ figure {
 /* Create event content */
 
 .create-event {
-  height: 55rem;
+  height: 100%;
+  margin-bottom: 5rem;
 }
 
 .create-event-form {
@@ -493,7 +499,7 @@ figure {
 
   /* stylelint-disable */
   .background {
-    background-image: url('assets/img/homepage-background.png');
+    background-image: url('assets/img/homepage-background.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;

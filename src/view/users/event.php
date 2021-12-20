@@ -54,7 +54,7 @@
                 ?>">
                 <span class="error"><?php if (!empty($errors['addItem'])) echo $errors['addItem']; ?></span>
             </label>
-            <input type="submit" value="add" class="button">
+            <input type="submit" value="Add item" class="button">
         </form>
 
       </div>
@@ -62,6 +62,6 @@
 
   </div>
 
-  <button class="button">Go back to group</button>
+  <button class="button" onclick="history.back()">Go back to group</button>
 
 </section>

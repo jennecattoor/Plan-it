@@ -3,7 +3,9 @@
   <div class="create-event">
       <h2>Change event info</h2>
       <hr>
-
+      <p class="subtext">Anything about your event that needs to be changed? <br>
+        You can change your event info right here!</p>
+      <hr>
       <div class="create-event-form">
         <form method="post">
         <input type="hidden" name="action" value="eventChange">
