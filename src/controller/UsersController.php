@@ -18,6 +18,12 @@ function izrand($length = 6) {
     return $random_string;
 }
 
+function dateFormat($dateString) {
+  $myDateTime = DateTime::createFromFormat('Y-m-d', $dateString);
+  $newDateString = $myDateTime->format('d M Y');
+  return $newDateString;
+}
+
 
 class UsersController extends Controller {
 

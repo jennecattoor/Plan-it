@@ -19,7 +19,7 @@
       <h3>Upcoming events</h3>
       <ul>
       <?php foreach($group->events as $event): ?>
-        <li><a href="index.php?page=event&id=<?php echo $event['id']; ?>"><?php echo $event['name']; ?></a> - <?php echo $event['date']; ?></li>
+        <li><a href="index.php?page=event&id=<?php echo $event['id']; ?>"><?php echo $event['name']; ?></a> - <?php echo dateFormat($event['date']); ?></li>
       <?php endforeach; ?>
       </ul>
     </div>

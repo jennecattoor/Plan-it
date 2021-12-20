@@ -5,7 +5,7 @@
 
     <hr>
 
-    <h3><?php echo $event['date']; ?></h3>
+    <h3><?php echo dateFormat($event['date']); ?></h3>
 
     <hr class="hr-footer">
 
