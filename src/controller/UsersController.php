@@ -82,9 +82,21 @@ class UsersController extends Controller {
         $group = Group::where('code', $_POST['code']);
           if ($group->exists()) {
             $groupnew = $group->first()->id;
-            $user->groups()->attach($groupnew);
-            header('Location: index.php?page=overview');
-            exit();
+
+            foreach ($user->groups as $group) {
+              $checkingGroup = $group->pivot->group_id;
+            }
+
+            if($user->groups->first()->pivot->user_id == $_SESSION['id'] && $checkingGroup == $groupnew){
+              header('Location: index.php?page=overview');
+              exit();
+            }
+
+            else {
+              $user->groups()->attach($groupnew);
+              header('Location: index.php?page=overview');
+              exit();
+            }
         }
       }
     }
