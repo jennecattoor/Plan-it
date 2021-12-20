@@ -18,6 +18,12 @@ function izrand($length = 6) {
     return $random_string;
 }
 
+function dateFormat($dateString) {
+  $myDateTime = DateTime::createFromFormat('Y-m-d', $dateString);
+  $newDateString = $myDateTime->format('d M Y');
+  return $newDateString;
+}
+
 
 class UsersController extends Controller {
 
@@ -82,9 +88,21 @@ class UsersController extends Controller {
         $group = Group::where('code', $_POST['code']);
           if ($group->exists()) {
             $groupnew = $group->first()->id;
-            $user->groups()->attach($groupnew);
-            header('Location: index.php?page=overview');
-            exit();
+
+            foreach ($user->groups as $group) {
+              $checkingGroup = $group->pivot->group_id;
+            }
+
+            if($user->groups->first()->pivot->user_id == $_SESSION['id'] && $checkingGroup == $groupnew){
+              header('Location: index.php?page=overview');
+              exit();
+            }
+
+            else {
+              $user->groups()->attach($groupnew);
+              header('Location: index.php?page=overview');
+              exit();
+            }
         }
       }
     }
@@ -163,7 +181,7 @@ class UsersController extends Controller {
   public function event() {
     if(!empty($_GET['id'])) {
       $event = Event::find($_GET['id']);
-      $user = User::all();
+      $user = User::find($_SESSION['id']);
     }
     if(empty($event)){
       header('Location:index.php');
@@ -188,8 +206,26 @@ class UsersController extends Controller {
       }
     }
 
-    $this->set('event', $event);
+    if(!empty($_POST['action'])){
+      if($_POST['action'] === 'doItem'){
+        $item = $_POST['itemID'];
+        $user->items()->attach($item);
+        header('Location: index.php?' . http_build_query($_GET));
+        exit();
+      }
+    }
+
+    if(!empty($_POST['action'])){
+      if($_POST['action'] === 'deleteItem'){
+        $item = $_POST['itemID'];
+        $user->items()->detach($item);
+        header('Location: index.php?' . http_build_query($_GET));
+        exit();
+      }
+    }
+
     $this->set('user', $user);
+    $this->set('event', $event);
     $this->set('title', 'Event');
   }
 }

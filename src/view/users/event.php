@@ -5,7 +5,7 @@
 
     <hr>
 
-    <h3><?php echo $event['date']; ?></h3>
+    <h3><?php echo dateFormat($event['date']); ?></h3>
 
     <hr class="hr-footer">
 
@@ -25,12 +25,21 @@
           <?php echo $item['name']; ?> - <?php
           if(!empty($item->users->first()->name)) {
             echo $item->users->first()->name;
+
+            if($item->users->first()->name == $user['name']){
+              ?><form method="post">
+              <input type="hidden" name="action" value="deleteItem">
+              <input type="submit" value="&#10007" class="delete">
+              <input type="hidden" name="itemID" value="<?php echo $_POST['itemID'] = $item->id; ?>"/>
+              </form><?php
+            }
            }
 
           if(empty($item->users->first()->name)) {
             ?><form method="post">
               <input type="hidden" name="action" value="doItem">
               <input type="submit" value="I will do this" class="assign-btn">
+              <input type="hidden" name="itemID" value="<?php echo $_POST['itemID'] = $item->id; ?>"/>
         </form>
           <?php ;} ?>
         </li>

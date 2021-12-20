@@ -11,7 +11,7 @@
         <figure style="background-color:<?php echo $group['color']; ?>"></figure>
         <div>
           <span class="overview-group-name"><?php echo $group['name']; ?></span><br>
-          <span>Upcoming event: <?php echo $group->events->first()->name; ?> - <?php echo $group->events->first()->date; ?></span>
+          <span>Upcoming event: <?php echo $group->events->first()->name; ?> - <?php echo dateFormat($group->events->first()->date); ?></span>
         </div>
       </div>
     </a>
