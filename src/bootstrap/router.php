@@ -25,6 +25,10 @@ $routes = array(
     'controller' => 'Users',
     'action' => 'createEvent'
   ),
+  'eventChange' => array(
+    'controller' => 'Users',
+    'action' => 'eventChange'
+  ),
   'event' => array(
     'controller' => 'Users',
     'action' => 'event'

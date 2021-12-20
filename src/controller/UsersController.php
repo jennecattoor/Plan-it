@@ -178,6 +178,36 @@ class UsersController extends Controller {
     $this->set('title', 'Create Event');
   }
 
+  public function eventChange() {
+    if(!empty($_GET['id'])){
+      $event = Event::find($_GET['id']);
+    }
+    if(empty($event)){
+      header('Location:index.php?page=overview');
+      exit();
+    }
+
+    if (!empty($_POST['action'])) {
+      if ($_POST['action'] == 'eventChange') {
+        $event->name = $_POST['eventName'];
+        $event->description = $_POST['eventDesc'];
+        $event->location = $_POST['eventLocation'];
+        $event->date = $_POST['eventDate'];
+        $errors = Event::validate($event);
+        if (empty($errors)) {
+          $event->save();
+          header('Location: index.php?page=event&id=' . $_GET['id']);
+          exit();
+        } else {
+          $this->set('errors', $errors);
+        }
+      }
+    }
+
+    $this->set('event', $event);
+    $this->set('title', 'Change event');
+  }
+
   public function event() {
     if(!empty($_GET['id'])) {
       $event = Event::find($_GET['id']);

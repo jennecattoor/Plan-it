@@ -12,7 +12,8 @@
     <p><?php echo $event['description']; ?></p>
     <br>
     <p>Location: <?php echo $event['location']; ?></p>
-
+    <br>
+    <a href="index.php?page=eventChange&id=<?php echo $event['id']; ?>">Change the event info</a>
     <hr>
 
     <div class="necessities">
