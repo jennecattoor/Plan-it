@@ -11,9 +11,9 @@ function izrand($length = 6) {
   $random_string="";
     while(strlen($random_string)<$length && $length > 0) {
         $randnum = mt_rand(0,61);
-          $random_string .= ($randnum < 10) ?
-            chr($randnum+48) : ($randnum < 36 ?
-                hr($randnum+55) : $randnum+61);
+        $random_string .= ($randnum < 10) ?
+          chr($randnum+48) : ($randnum < 36 ?
+            chr($randnum+55) : $randnum+61);
     }
     return $random_string;
 }
@@ -88,22 +88,9 @@ class UsersController extends Controller {
         $group = Group::where('code', $_POST['code']);
           if ($group->exists()) {
             $groupnew = $group->first()->id;
-
-            foreach ($user->groups as $group) {
-              $checkingGroup = $group->pivot->group_id;
-              $checkingUser = $group->pivot->user_id;
-            }
-
-            if($checkingUser == $_SESSION['id'] && $checkingGroup == $groupnew){
-              header('Location: index.php?page=overview');
-              exit();
-            }
-
-            else {
-              $user->groups()->attach($groupnew);
-              header('Location: index.php?page=overview');
-              exit();
-            }
+            $user->groups()->attach($groupnew);
+            header('Location: index.php?page=overview');
+            exit();
         }
       }
     }

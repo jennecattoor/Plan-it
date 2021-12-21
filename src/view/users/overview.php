@@ -9,7 +9,7 @@
   <form method="post">
   <input type="hidden" name="action" value="joinGroup">
     <label class="label">Group code:<br>
-      <input type="text" name="code" class="input" placeholder="GQP691" required value="<?php
+      <input type="text" name="code" class="input" placeholder="GQP691" required minlength="6" value="<?php
         if (!empty($_POST['code'])) echo $_POST['code'];
       ?>">
       <span class="error"><?php if (!empty($errors['code'])) echo $errors['code']; ?></span>
@@ -29,11 +29,18 @@
         <figure style="background-color:<?php echo $group['color']; ?>"></figure>
         <div>
           <span class="overview-group-name"><?php echo $group['name']; ?></span><br>
-          <span>Upcoming event: <?php echo $group->events->first()->name; ?> - <?php echo dateFormat($group->events->first()->date); ?></span>
+          <?php if ($group->events->first()) { ?>
+            <span>Upcoming event: <?php echo $group->events->first()->name; ?> - <?php echo dateFormat($group->events->first()->date); ?></span><?php
+            } else {
+              ?><p>No upcomming events</p><?php
+            } ?>
         </div>
       </div>
     </a>
   <?php endforeach; ?>
+  <?php $inGroup = $user->groups->first()?>
+  <?php if (!$inGroup) {
+    ?> <p>You are not in a group yet. You can <a href="index.php?page=createGroup"><span class="color--accent">Create a group now</span></a></p><?php };?>
 </div>
 
 
