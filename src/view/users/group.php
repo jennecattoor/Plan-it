@@ -34,10 +34,10 @@
       <button class="button" id="copy-btn">Copy invite code:<p id="group-code"><?php echo $group['code']; ?></p></button>
     </div>
 
-    <form method="post" id="leave-group" class="leave-form">
-      <input type="hidden" name="action" value="leaveGroup" id="leave-group">
-      <input type="submit" value="Leave group" class="delete" id="leave-group">
-      <input type="hidden" name="groupID" value="<?php echo $_POST['groupID'] = $_GET['id']; ?>">
+    <form method="post" class="leave-form">
+      <input type="hidden" name="action" value="leaveGroup">
+      <input type="submit" value="Leave group" class="delete">
+      <input type="hidden" name="groupID" value="<?php echo $_POST['groupID'] = $_POST['id']; ?>">
     </form>
   </div>
 </section>
