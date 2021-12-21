@@ -157,6 +157,14 @@ h3 {
   margin-bottom: var(--spacerSmall);
 }
 
+h4 {
+  font-size: var(--fontRegular);
+  line-height: var(--spacerMedium);
+  font-weight: var(--fontWeightBold);
+  margin-top: var(--spacerBig);
+  margin-bottom: var(--spacerSmall);
+}
+
 .subheading {
   display: none;
 }
@@ -327,8 +335,9 @@ figure {
 
 /* Create groups content */
 
-.create-group {
-  height: 35rem;
+.color-input {
+  height: 3rem;
+  width: 100%;
 }
 
 .create-group p {
@@ -339,6 +348,21 @@ figure {
 .create-group-form {
   max-width: var(--inputWidth);
   margin: auto;
+}
+
+.upcoming-list {
+  line-height: var(--spacerBig);
+  align-items: center;
+  list-style: none;
+  font-size: var(--fontRegular);
+}
+
+.upcoming-list::before {
+  content: '\2022';
+  font-weight: bold;
+  color: var(--colorMain);
+  font-size: var(--fontMedium);
+  margin-right: var(--spacerXsmall);
 }
 
 /* Create event content */
@@ -386,19 +410,29 @@ figure {
 }
 
 .item-list {
-  line-height: var(--spacerXBig);
+  line-height: var(--spacerBig);
   display: flex;
   align-items: center;
   list-style: none;
-  font-size: var(--spacerMedium);
+  font-size: var(--fontRegular);
 }
 
 .item-list::before {
   content: '\2022';
   font-weight: bold;
   color: var(--colorMain);
-  font-size: var(--fontBig);
-  margin-right: var(--spacerSmall);
+  font-size: var(--fontMedium);
+  margin-right: var(--spacerXsmall);
+}
+
+.leave-form {
+  margin: auto;
+  margin-top: 4rem;
+  text-align: center;
+  width: 8rem;
+  border: 1px solid red;
+  border-radius: 2px;
+
 }
 
 .delete {
@@ -493,13 +527,35 @@ figure {
   .create-group-form {
     max-width: var(--inputWidth);
   }
+
+  .item-list {
+    line-height: var(--spacerXBig);
+    display: flex;
+    font-size: var(--fontMedium);
+  }
+
+  .item-list::before {
+    font-size: var(--fontBig);
+    margin-right: var(--spacerSmall);
+  }
+
+  .upcoming-list {
+    line-height: var(--spacerXBig);
+    display: flex;
+    font-size: var(--fontMedium);
+  }
+
+  .upcoming-list::before {
+    font-size: var(--fontBig);
+    margin-right: var(--spacerSmall);
+  }
 }
 
 @media only screen and (min-width: 1360px) {
 
   /* stylelint-disable */
   .background {
-    background-image: url('assets/img/homepage-background.jpg');
+    background-image: url('assets/img/homepage-background.webp');
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;

@@ -36,13 +36,13 @@
 
     <div class="tutorial-info">
       <img src="./assets/img/group.svg" alt="group-icon">
-      <h3>Create a groups and invite your friends and family.</h3>
+      <h4>Create groups and invite your friends and family.</h4>
 
       <img src="./assets/img/calendar.svg" alt="calender-icon">
-      <h3>Create a event for your groups.</h3>
+      <h4>Create events for your groups.</h4>
 
       <img src="./assets/img/organize.svg" alt="organize-icon">
-      <h3>Organize the dates and to-bring lists for your events.</h3>
+      <h4>Organize the dates and to-bring lists for your events.</h4>
     </div>
   </div>
 
