@@ -32,7 +32,7 @@
           <?php if ($group->events->first()) { ?>
             <span>Upcoming event: <?php echo $group->events->first()->name; ?><br class="break"> - <?php echo dateFormat($group->events->first()->date); ?></span><?php
             } else {
-              ?><p>No upcomming events</p><?php
+              ?><p>No upcoming events</p><?php
             } ?>
         </div>
       </div>

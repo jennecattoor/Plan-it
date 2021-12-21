@@ -35,7 +35,7 @@ main {
 
 .error {
   color: red;
-  font-size: var(--fontSmall);
+  font-size: .65rem;
   margin-top: var(--spacerXsmall);
 }
 
