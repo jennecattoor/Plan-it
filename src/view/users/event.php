@@ -62,6 +62,6 @@
 
   </div>
 
-  <a href="index.php?page=group&id=<?php echo $event['id']; ?>" class="no-decoration"><button class="button">Go back to group</button></a>
+  <a href="index.php?page=group&id=<?php echo $_GET['g']; ?>" class="no-decoration"><button class="button">Go back to group</button></a>
 
 </section>
