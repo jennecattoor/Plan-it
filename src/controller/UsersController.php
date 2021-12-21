@@ -76,7 +76,6 @@ class UsersController extends Controller {
         }
       }
     }
-
     $this->set('title', 'Login');
   }
 
@@ -85,12 +84,29 @@ class UsersController extends Controller {
 
       if(!empty($_POST['action'])){
       if($_POST['action'] === 'joinGroup'){
-        $group = Group::where('code', $_POST['code']);
-          if ($group->exists()) {
-            $groupnew = $group->first()->id;
-            $user->groups()->attach($groupnew);
-            header('Location: index.php?page=overview');
-            exit();
+      $group = Group::where('code', $_POST['code']);
+      $groupnew = $group->first()->id;
+      $userID = $_SESSION['id'];
+
+         if ($group->exists()) {
+            if(!$user->groups->first()) {
+              $user->groups()->attach($groupnew);
+              header('Location: index.php?page=overview');
+              exit();
+            }
+
+            else {
+              $checkingGroup = $user->groups->where('code', $_POST['code'])->first();
+              if($checkingGroup == null) {
+                $user->groups()->attach($groupnew);
+                header('Location: index.php?page=overview');
+                exit();
+              }
+              else {
+                header('Location: index.php?page=overview');
+                exit();
+              }
+            }
         }
       }
     }
