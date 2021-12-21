@@ -12,7 +12,8 @@
     <p><?php echo $event['description']; ?></p>
     <br>
     <p>Location: <?php echo $event['location']; ?></p>
-
+    <br>
+    <a href="index.php?page=eventChange&id=<?php echo $event['id']; ?>">Change the event info</a>
     <hr>
 
     <div class="necessities">
@@ -53,7 +54,7 @@
                 ?>">
                 <span class="error"><?php if (!empty($errors['addItem'])) echo $errors['addItem']; ?></span>
             </label>
-            <input type="submit" value="add" class="button">
+            <input type="submit" value="Add item" class="button">
         </form>
 
       </div>
@@ -61,6 +62,6 @@
 
   </div>
 
-  <button class="button">Go back to group</button>
+  <a href="index.php?page=group&id=<?php echo $event['id']; ?>" class="no-decoration"><button class="button">Go back to group</button></a>
 
 </section>

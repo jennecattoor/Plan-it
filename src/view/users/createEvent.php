@@ -29,7 +29,7 @@
                 <span class="error"><?php if (!empty($errors['eventDate'])) echo $errors['eventDate']; ?></span>
             </label>
             <label class="label">Event location: <br>
-                <input type="text" name="eventLocation" class="input" placeholder="Pizza Party at school. Be there or be square" required maxlength="255" value="<?php
+                <input type="text" name="eventLocation" class="input" placeholder="Dam 2a, 8500 Kortrijk" required maxlength="255" value="<?php
                     if (!empty($_POST['eventLocation'])) echo $_POST['eventLocation'];
                 ?>">
                 <span class="error"><?php if (!empty($errors['eventLocation'])) echo $errors['eventLocation']; ?></span>

@@ -28,4 +28,3 @@ function copyFunc() {
   const copyText = document.getElementById('group-code');
   navigator.clipboard.writeText(copyText.innerHTML).then(copyBtn.innerHTML = 'Copied code to clipboard!');
 }
-

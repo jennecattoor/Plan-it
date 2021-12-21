@@ -5,7 +5,7 @@
       <hr>
       <p class="subtext">Creating a group gives you the opportunity to invite the friends you want.
         <br> <br>
-        Then create an awesome event and let the party begin!</p>
+        Then create awesome events and let the party begin!</p>
       <hr>
       <div class="create-group-form">
         <form method="post">
@@ -23,7 +23,7 @@
                 <span class="error"><?php if (!empty($errors['groupDesc'])) echo $errors['groupDesc']; ?></span>
             </label>
             <label class="label">Group color: <br>
-                <input type="color" name="groupColor" class="input" required value="<?php
+                <input type="color" name="groupColor" class="color-input" required value="<?php
                     if (!empty($_POST['groupColor'])) echo $_POST['groupColor'];
                 ?>">
                 <span class="error"><?php if (!empty($errors['groupColor'])) echo $errors['groupColor']; ?></span>

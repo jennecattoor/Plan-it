@@ -11,9 +11,9 @@ function izrand($length = 6) {
   $random_string="";
     while(strlen($random_string)<$length && $length > 0) {
         $randnum = mt_rand(0,61);
-          $random_string .= ($randnum < 10) ?
-            chr($randnum+48) : ($randnum < 36 ?
-                hr($randnum+55) : $randnum+61);
+        $random_string .= ($randnum < 10) ?
+          chr($randnum+48) : ($randnum < 36 ?
+            chr($randnum+55) : $randnum+61);
     }
     return $random_string;
 }
@@ -88,21 +88,9 @@ class UsersController extends Controller {
         $group = Group::where('code', $_POST['code']);
           if ($group->exists()) {
             $groupnew = $group->first()->id;
-
-            foreach ($user->groups as $group) {
-              $checkingGroup = $group->pivot->group_id;
-            }
-
-            if($user->groups->first()->pivot->user_id == $_SESSION['id'] && $checkingGroup == $groupnew){
-              header('Location: index.php?page=overview');
-              exit();
-            }
-
-            else {
-              $user->groups()->attach($groupnew);
-              header('Location: index.php?page=overview');
-              exit();
-            }
+            $user->groups()->attach($groupnew);
+            header('Location: index.php?page=overview');
+            exit();
         }
       }
     }
@@ -141,10 +129,20 @@ class UsersController extends Controller {
   public function group() {
     if(!empty($_GET['id'])) {
       $group = Group::find($_GET['id']);
+      $user = User::find($_SESSION['id']);
     }
     if(empty($group)){
       header('Location:index.php');
       exit();
+    }
+
+    if(!empty($_POST['action'])){
+      if($_POST['action'] === 'leaveGroup'){
+        $group = $_POST['groupID'];
+        $user->groups()->detach($group);
+        header('Location: index.php?page=overview');
+        exit();
+      }
     }
 
     $this->set('group', $group);
@@ -176,6 +174,36 @@ class UsersController extends Controller {
     }
 
     $this->set('title', 'Create Event');
+  }
+
+  public function eventChange() {
+    if(!empty($_GET['id'])){
+      $event = Event::find($_GET['id']);
+    }
+    if(empty($event)){
+      header('Location:index.php?page=overview');
+      exit();
+    }
+
+    if (!empty($_POST['action'])) {
+      if ($_POST['action'] == 'eventChange') {
+        $event->name = $_POST['eventName'];
+        $event->description = $_POST['eventDesc'];
+        $event->location = $_POST['eventLocation'];
+        $event->date = $_POST['eventDate'];
+        $errors = Event::validate($event);
+        if (empty($errors)) {
+          $event->save();
+          header('Location: index.php?page=event&id=' . $_GET['id']);
+          exit();
+        } else {
+          $this->set('errors', $errors);
+        }
+      }
+    }
+
+    $this->set('event', $event);
+    $this->set('title', 'Change event');
   }
 
   public function event() {
