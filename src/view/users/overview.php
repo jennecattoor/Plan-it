@@ -30,7 +30,7 @@
         <div>
           <span class="overview-group-name"><?php echo $group['name']; ?></span><br>
           <?php if ($group->events->first()) { ?>
-            <span>Upcoming event: <?php echo $group->events->first()->name; ?> - <?php echo dateFormat($group->events->first()->date); ?></span><?php
+            <span>Upcoming event: <?php echo $group->events->first()->name; ?><br class="break"> - <?php echo dateFormat($group->events->first()->date); ?></span><?php
             } else {
               ?><p>No upcomming events</p><?php
             } ?>

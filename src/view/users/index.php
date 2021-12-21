@@ -32,7 +32,7 @@
         </form>
     </div>
 
-    <p class="login-option">Already have an account? <a href="index.php?page=login" class="hyperlink">Log in<a></p>
+    <p class="login-option">Already have an account? <a href="index.php?page=login" class="hyperlink">Log in</a></p>
 
     <div class="tutorial-info">
       <img src="./assets/img/group.svg" alt="group-icon">
@@ -44,7 +44,9 @@
       <img src="./assets/img/organize.svg" alt="organize-icon">
       <h4>Organize the dates and to-bring lists for your events.</h4>
     </div>
-  </div>
 
-</section>
+
+  </div>
 </div>
+</section>
+
