@@ -91,9 +91,10 @@ class UsersController extends Controller {
 
             foreach ($user->groups as $group) {
               $checkingGroup = $group->pivot->group_id;
+              $checkingUser = $group->pivot->user_id;
             }
 
-            if($user->groups->first()->pivot->user_id == $_SESSION['id'] && $checkingGroup == $groupnew){
+            if($checkingUser == $_SESSION['id'] && $checkingGroup == $groupnew){
               header('Location: index.php?page=overview');
               exit();
             }
@@ -141,10 +142,20 @@ class UsersController extends Controller {
   public function group() {
     if(!empty($_GET['id'])) {
       $group = Group::find($_GET['id']);
+      $user = User::find($_SESSION['id']);
     }
     if(empty($group)){
       header('Location:index.php');
       exit();
+    }
+
+    if(!empty($_POST['action'])){
+      if($_POST['action'] === 'leaveGroup'){
+        $group = $_POST['groupID'];
+        $user->groups()->detach($group);
+        header('Location: index.php?page=overview');
+        exit();
+      }
     }
 
     $this->set('group', $group);

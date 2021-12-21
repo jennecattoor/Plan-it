@@ -25,16 +25,19 @@
     </div>
     <a href="index.php?page=createEvent&id=<?php echo $group['id']; ?>" class="no-decoration"><button class="button">Create new event</button></a>
     <hr class="hr-footer">
-  </div>
 
-  <div class="group-buttons">
-    <p>Want to invite people to the group? <br> <br>
+    <div class="group-buttons">
+      <p>Want to invite people to the group? <br> <br>
        Click the button below to copy the invite code and send it to your friends!
       </p>
-    <br>
-    <button class="button" id="copy-btn">Copy invite code:<p id="group-code"><?php echo $group['code']; ?></p></button>
+      <br>
+      <button class="button" id="copy-btn">Copy invite code:<p id="group-code"><?php echo $group['code']; ?></p></button>
+    </div>
+
+    <form method="post" id="leave-group">
+      <input type="hidden" name="action" value="leaveGroup" id="leave-group">
+      <input type="submit" value="Leave group" class="delete" id="leave-group">
+      <input type="hidden" name="groupID" value="<?php echo $_POST['groupID'] = $_GET['id']; ?>">
+    </form>
   </div>
-
-
-
 </section>
